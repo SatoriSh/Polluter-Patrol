@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=4 uid="uid://b8jm1hg5pmy0j"]
+[gd_scene load_steps=25 format=4 uid="uid://b8jm1hg5pmy0j"]
 
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="1_6iamk"]
+[ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_6761a"]
 [ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="2_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="3_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="4_x42e6"]
@@ -450,7 +451,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Level 1" type="Node2D"]
+[node name="Level 1" type="Node2D" node_paths=PackedStringArray("_labelCountToWin")]
+script = ExtResource("1_6761a")
+_labelCountToWin = NodePath("CountToWin")
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -611,6 +614,7 @@ frame_progress = 0.179089
 position = Vector2(1260, 200)
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2"), NodePath("../PointsForCharacter1/Marker2D3"), NodePath("../PointsForCharacter1/Marker2D4"), NodePath("../PointsForCharacter1/Marker2D5"), NodePath("../PointsForCharacter1/Marker2D6"), NodePath("../PointsForCharacter1/Marker2D7")]
 _garbageTimerWaitTime = 2.0
+_timeToTakePicture = 1.0
 
 [node name="PointsForCharacter1" type="Node2D" parent="."]
 
@@ -636,4 +640,9 @@ position = Vector2(456, 56)
 position = Vector2(225, -57)
 
 [node name="PlayerCamera" parent="." instance=ExtResource("4_x42e6")]
-visible = false
+
+[node name="CountToWin" type="Label" parent="."]
+offset_right = 56.0
+offset_bottom = 23.0
+scale = Vector2(2, 2)
+text = "Count: "

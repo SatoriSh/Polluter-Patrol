@@ -8,6 +8,8 @@ public partial class Character : CharacterBody2D
     [Export]
     private Marker2D[] _pathPositions;
 
+    public bool CanTakePicture = false;
+
     private float _minDistanceToNextPosition = 25f;
 
     private Vector2 _direction;
@@ -21,9 +23,12 @@ public partial class Character : CharacterBody2D
     private PackedScene _garbageScene;
 
     private Timer _garbageTimer = new Timer();
+    private Timer _timerToTakePicture = new Timer();
 
     [Export]
     private float _garbageTimerWaitTime;
+    [Export]
+    private float _timeToTakePicture;
 
     public override void _Ready()
     {
@@ -31,7 +36,12 @@ public partial class Character : CharacterBody2D
         _garbageTimer.WaitTime = _garbageTimerWaitTime;
         _garbageTimer.Timeout += OnGarbageTimerTimeout;
 
+        _timerToTakePicture.Autostart = false;
+        _timerToTakePicture.WaitTime = _timeToTakePicture;
+        _timerToTakePicture.Timeout += OnTimerToTakePictureTimeOut;
+
         AddChild(_garbageTimer);
+        AddChild(_timerToTakePicture);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -71,7 +81,12 @@ public partial class Character : CharacterBody2D
         var tempScene = _garbageScene.Instantiate() as Node2D;
         tempScene.GlobalPosition = this.GlobalPosition;
         GetParent().AddChild(tempScene);
+
+        _timerToTakePicture.Start();
+        CanTakePicture = true;
     }
+
+    private void OnTimerToTakePictureTimeOut() => CanTakePicture = false;
 
     private void SetAnim()
     {
