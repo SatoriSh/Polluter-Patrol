@@ -34,12 +34,12 @@ public partial class PlayerCamera : Node2D
                 continue;
             }
 
-            if (character.CanTakePicture)
+            if (character.CanTakePicture && !character.AlreadyBeenPhotographed)
             {
                 GD.Print($"ПОПАЛСЯ: {character.Name}");
+                character.AlreadyBeenPhotographed = true;
                 (GetParent() as Level).UpdateLabelCountToWinText();
 
-                _charactersInZoom.Remove(character);
                 continue;
             }
         }

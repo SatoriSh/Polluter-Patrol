@@ -9,6 +9,7 @@ public partial class Character : CharacterBody2D
     private Marker2D[] _pathPositions;
 
     public bool CanTakePicture = false;
+    public bool AlreadyBeenPhotographed = false;
 
     private float _minDistanceToNextPosition = 25f;
 
@@ -86,7 +87,11 @@ public partial class Character : CharacterBody2D
         CanTakePicture = true;
     }
 
-    private void OnTimerToTakePictureTimeOut() => CanTakePicture = false;
+    private void OnTimerToTakePictureTimeOut()
+    {
+        CanTakePicture = false;
+        AlreadyBeenPhotographed = false;
+    }
 
     private void SetAnim()
     {
