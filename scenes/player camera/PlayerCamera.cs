@@ -36,7 +36,6 @@ public partial class PlayerCamera : Node2D
 
             if (character.CanTakePicture && !character.AlreadyBeenPhotographed)
             {
-                GD.Print($"ПОПАЛСЯ: {character.Name}");
                 character.AlreadyBeenPhotographed = true;
                 (GetParent() as Level).UpdateLabelCountToWinText();
 

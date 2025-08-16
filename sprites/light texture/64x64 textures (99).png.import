@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brnva0vko8wjx"
-path="res://.godot/imported/Pokemon Swimmer.png-2e8b84345db26d66f1bfcbb5a1f768d4.ctex"
+uid="uid://dk2b5vyisv01m"
+path="res://.godot/imported/64x64 textures (99).png-5256d10f03a3734f62725de735ada584.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/Pokemon Swimmer.png"
-dest_files=["res://.godot/imported/Pokemon Swimmer.png-2e8b84345db26d66f1bfcbb5a1f768d4.ctex"]
+source_file="res://sprites/light texture/64x64 textures (99).png"
+dest_files=["res://.godot/imported/64x64 textures (99).png-5256d10f03a3734f62725de735ada584.ctex"]
 
 [params]
 
