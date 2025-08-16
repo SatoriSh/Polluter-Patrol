@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmc3tt4vi5qpu"]
+[gd_scene load_steps=7 format=3 uid="uid://dmc3tt4vi5qpu"]
 
 [ext_resource type="Script" uid="uid://bhpx6yjfakrwu" path="res://scenes/player camera/PlayerCamera.cs" id="1_6vm8v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6vm8v"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nivh7"]
 
 [sub_resource type="Animation" id="Animation_ox4e1"]
 resource_name = "flash"
-length = 0.1
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -14,7 +16,7 @@ tracks/0/path = NodePath("CameraFlashSprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.02, 0.1),
+"times": PackedFloat32Array(0, 0.05, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -22,18 +24,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yvgv8"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CameraFlashSprite:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dma8w"]
 _data = {
@@ -41,14 +31,20 @@ _data = {
 &"flash": SubResource("Animation_ox4e1")
 }
 
-[node name="PlayerCamera" type="Node2D"]
+[node name="PlayerCamera" type="Node2D" node_paths=PackedStringArray("_anim")]
 script = ExtResource("1_6vm8v")
+_anim = NodePath("AnimationPlayer")
 
 [node name="CameraSprite" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.501961)
+position = Vector2(2.27374e-13, 0)
+scale = Vector2(98, 64.0928)
+texture = SubResource("CanvasTexture_6vm8v")
 
 [node name="CameraFlashSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(563, 267)
-scale = Vector2(2966, 1400.98)
+scale = Vector2(17272, 8158.4)
 texture = SubResource("CanvasTexture_nivh7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

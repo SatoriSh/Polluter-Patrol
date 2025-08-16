@@ -8,14 +8,14 @@ public partial class Character : CharacterBody2D
     [Export]
     private Marker2D[] _pathPositions;
 
-    private float minDistanceToNextPosition = 25f;
+    private float _minDistanceToNextPosition = 25f;
 
     private Vector2 _direction;
 
     private int _pathPositionIndex = 0;
 
     [Export]
-    private AnimatedSprite2D anim;
+    private AnimatedSprite2D _anim;
 
     public override void _PhysicsProcess(double delta)
     {
@@ -46,14 +46,14 @@ public partial class Character : CharacterBody2D
 
     private bool PlayerIsOnPosition()
     {
-        return this.GlobalPosition.DistanceTo(_pathPositions[_pathPositionIndex].GlobalPosition) <= minDistanceToNextPosition;
+        return this.GlobalPosition.DistanceTo(_pathPositions[_pathPositionIndex].GlobalPosition) <= _minDistanceToNextPosition;
     }
 
     private void SetAnim()
     {
         if (Math.Abs(_direction.X) > Math.Abs(_direction.Y))
-            anim.Play(_direction.X > 0 ? "move_right" : "move_left");
+            _anim.Play(_direction.X > 0 ? "move_right" : "move_left");
         else
-            anim.Play(_direction.Y > 0 ? "move_down" : "move_up");
+            _anim.Play(_direction.Y > 0 ? "move_down" : "move_up");
     }
 }

@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=4 uid="uid://b8jm1hg5pmy0j"]
+[gd_scene load_steps=24 format=4 uid="uid://b8jm1hg5pmy0j"]
 
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="1_6iamk"]
 [ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="2_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="3_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="4_x42e6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x42e6"]
 texture = ExtResource("1_6iamk")
@@ -458,7 +459,7 @@ tile_map_data = PackedByteArray("AAD4//r/AAAOAAEAAAD4//v/AAAOAAEAAAD4//z/AAAOAAE
 tile_set = SubResource("TileSet_6761a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(20, 535)
+position = Vector2(20, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 
@@ -469,7 +470,7 @@ autoplay = "default"
 frame_progress = 0.179089
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(116, 535)
+position = Vector2(116, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.504832
@@ -481,13 +482,13 @@ autoplay = "default"
 frame_progress = 0.179089
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(211, 535)
+position = Vector2(211, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.504832
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(259, 535)
+position = Vector2(259, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
@@ -499,13 +500,13 @@ autoplay = "default"
 frame_progress = 0.897788
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(355, 535)
+position = Vector2(355, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
 
 [node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(403, 535)
+position = Vector2(403, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.504832
@@ -517,7 +518,7 @@ autoplay = "default"
 frame_progress = 0.179089
 
 [node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(498, 535)
+position = Vector2(498, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.504832
@@ -529,7 +530,7 @@ autoplay = "default"
 frame_progress = 0.179089
 
 [node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(594, 535)
+position = Vector2(594, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.0346743
@@ -547,7 +548,7 @@ autoplay = "default"
 frame_progress = 0.504832
 
 [node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(738, 535)
+position = Vector2(738, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
@@ -571,7 +572,7 @@ autoplay = "default"
 frame_progress = 0.897788
 
 [node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(929, 535)
+position = Vector2(929, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
@@ -583,7 +584,7 @@ autoplay = "default"
 frame_progress = 0.504832
 
 [node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(1025, 535)
+position = Vector2(1025, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
@@ -595,7 +596,7 @@ autoplay = "default"
 frame_progress = 0.504832
 
 [node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="Ground"]
-position = Vector2(1120, 535)
+position = Vector2(1120, 541)
 sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
@@ -632,3 +633,6 @@ position = Vector2(456, 56)
 
 [node name="Marker2D7" type="Marker2D" parent="PointsForCharacter1"]
 position = Vector2(225, -57)
+
+[node name="PlayerCamera" parent="." instance=ExtResource("4_x42e6")]
+visible = false

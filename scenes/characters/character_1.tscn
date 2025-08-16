@@ -146,12 +146,12 @@ height = 8.0
 radius = 7.0
 height = 20.0
 
-[node name="Character1" type="CharacterBody2D" node_paths=PackedStringArray("_pathPositions", "anim")]
+[node name="Character1" type="CharacterBody2D" node_paths=PackedStringArray("_pathPositions", "_anim")]
 scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_cqmbo")
 _pathPositions = []
-anim = NodePath("AnimatedSprite2D")
+_anim = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
