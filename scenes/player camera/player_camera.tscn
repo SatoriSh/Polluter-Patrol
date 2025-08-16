@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmc3tt4vi5qpu"]
+[gd_scene load_steps=8 format=3 uid="uid://dmc3tt4vi5qpu"]
 
 [ext_resource type="Script" uid="uid://bhpx6yjfakrwu" path="res://scenes/player camera/PlayerCamera.cs" id="1_6vm8v"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_6vm8v"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nivh7"]
+
+[sub_resource type="Animation" id="Animation_yvgv8"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_ox4e1"]
 resource_name = "flash"
@@ -22,16 +25,17 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_yvgv8"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dma8w"]
 _data = {
 &"RESET": SubResource("Animation_yvgv8"),
 &"flash": SubResource("Animation_ox4e1")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vm8v"]
+size = Vector2(98, 64)
+
 [node name="PlayerCamera" type="Node2D" node_paths=PackedStringArray("_anim")]
+scale = Vector2(1.4, 1.4)
 script = ExtResource("1_6vm8v")
 _anim = NodePath("AnimationPlayer")
 
@@ -51,3 +55,8 @@ texture = SubResource("CanvasTexture_nivh7")
 libraries = {
 &"": SubResource("AnimationLibrary_dma8w")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6vm8v")

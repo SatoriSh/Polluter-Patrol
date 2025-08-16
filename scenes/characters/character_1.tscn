@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://d1qbjga16vtp8"]
+[gd_scene load_steps=23 format=3 uid="uid://d1qbjga16vtp8"]
 
 [ext_resource type="Script" uid="uid://cod0uso2002o" path="res://scenes/characters/Character.cs" id="1_cqmbo"]
 [ext_resource type="Texture2D" uid="uid://ccttlb5vgrir6" path="res://sprites/characters/Adrien.png" id="2_ijfti"]
+[ext_resource type="PackedScene" uid="uid://bwslwob0y7367" path="res://scenes/garbage/garbage.tscn" id="2_s8j55"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8j55"]
 atlas = ExtResource("2_ijfti")
@@ -152,6 +153,7 @@ collision_mask = 2
 script = ExtResource("1_cqmbo")
 _pathPositions = []
 _anim = NodePath("AnimatedSprite2D")
+_garbageScene = ExtResource("2_s8j55")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)

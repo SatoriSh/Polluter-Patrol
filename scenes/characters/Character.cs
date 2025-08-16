@@ -4,7 +4,7 @@ using System;
 public partial class Character : CharacterBody2D
 {
     [Export]
-    private float _speed = 150f;
+    private float _speed = 80f;
     [Export]
     private Marker2D[] _pathPositions;
 
@@ -16,6 +16,23 @@ public partial class Character : CharacterBody2D
 
     [Export]
     private AnimatedSprite2D _anim;
+
+    [Export]
+    private PackedScene _garbageScene;
+
+    private Timer _garbageTimer = new Timer();
+
+    [Export]
+    private float _garbageTimerWaitTime;
+
+    public override void _Ready()
+    {
+        _garbageTimer.Autostart = true;
+        _garbageTimer.WaitTime = _garbageTimerWaitTime;
+        _garbageTimer.Timeout += OnGarbageTimerTimeout;
+
+        AddChild(_garbageTimer);
+    }
 
     public override void _PhysicsProcess(double delta)
     {
@@ -47,6 +64,13 @@ public partial class Character : CharacterBody2D
     private bool PlayerIsOnPosition()
     {
         return this.GlobalPosition.DistanceTo(_pathPositions[_pathPositionIndex].GlobalPosition) <= _minDistanceToNextPosition;
+    }
+
+    private void OnGarbageTimerTimeout()
+    {
+        var tempScene = _garbageScene.Instantiate() as Node2D;
+        tempScene.GlobalPosition = this.GlobalPosition;
+        GetParent().AddChild(tempScene);
     }
 
     private void SetAnim()

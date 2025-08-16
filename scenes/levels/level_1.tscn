@@ -610,6 +610,7 @@ frame_progress = 0.179089
 [node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("3_nsrm0")]
 position = Vector2(1260, 200)
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2"), NodePath("../PointsForCharacter1/Marker2D3"), NodePath("../PointsForCharacter1/Marker2D4"), NodePath("../PointsForCharacter1/Marker2D5"), NodePath("../PointsForCharacter1/Marker2D6"), NodePath("../PointsForCharacter1/Marker2D7")]
+_garbageTimerWaitTime = 2.0
 
 [node name="PointsForCharacter1" type="Node2D" parent="."]
 

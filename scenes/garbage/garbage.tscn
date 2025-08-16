@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwslwob0y7367"]
+
+[ext_resource type="Texture2D" uid="uid://jw8nvbc8ctea" path="res://sprites/ground/124x124.png" id="1_b6b1d"]
+[ext_resource type="Script" uid="uid://dnnwka1nekti8" path="res://scenes/garbage/Garbage.cs" id="1_h37op"]
+
+[sub_resource type="Animation" id="Animation_h37op"]
+resource_name = "fall"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GarbagesSprites:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -36.34), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GarbagesSprites:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.36136]
+}
+
+[sub_resource type="Animation" id="Animation_65bop"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GarbagesSprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GarbagesSprites:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_we45p"]
+_data = {
+&"RESET": SubResource("Animation_65bop"),
+&"fall": SubResource("Animation_h37op")
+}
+
+[node name="Garbage" type="Node2D" node_paths=PackedStringArray("_garbageSprites")]
+script = ExtResource("1_h37op")
+_garbageSprites = [NodePath("GarbagesSprites/Garbage1Sprite"), NodePath("GarbagesSprites/Garbage2Sprite"), NodePath("GarbagesSprites/Garbage3Sprite")]
+
+[node name="GarbagesSprites" type="Node2D" parent="."]
+scale = Vector2(0.75, 0.75)
+
+[node name="Garbage1Sprite" type="Sprite2D" parent="GarbagesSprites"]
+texture = ExtResource("1_b6b1d")
+region_enabled = true
+region_rect = Rect2(4.33666, 101.378, 24.9721, 25.4181)
+
+[node name="Garbage2Sprite" type="Sprite2D" parent="GarbagesSprites"]
+texture = ExtResource("1_b6b1d")
+region_enabled = true
+region_rect = Rect2(36.0881, 135.014, 22.894, 18.2036)
+
+[node name="Garbage3Sprite" type="Sprite2D" parent="GarbagesSprites"]
+texture = ExtResource("1_b6b1d")
+region_enabled = true
+region_rect = Rect2(4.46713, 166.64, 22.6707, 18.3152)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_we45p")
+}
+autoplay = "fall"
