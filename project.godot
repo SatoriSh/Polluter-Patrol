@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Polluter Patrol"
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Polluter Patrol"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/project_time_tracker/plugin.cfg")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
