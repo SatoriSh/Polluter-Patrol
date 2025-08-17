@@ -8,6 +8,7 @@ public partial class PlayerCamera : Node2D
     private AnimationPlayer _anim;
 
     private List<Character> _charactersInZoom = new List<Character>();
+    private List<Garbage> _garbageInZoom = new List<Garbage>();
 
     //public override void _Ready() => this.Visible = true;
 
@@ -34,7 +35,7 @@ public partial class PlayerCamera : Node2D
                 continue;
             }
 
-            if (character.CanTakePicture && !character.AlreadyBeenPhotographed)
+            if (character.CanTakePicture && !character.AlreadyBeenPhotographed && _garbageInZoom.Count > 0)
             {
                 character.AlreadyBeenPhotographed = true;
                 (GetParent() as Level).UpdateLabelCountToWinText();
@@ -50,6 +51,10 @@ public partial class PlayerCamera : Node2D
         {
             _charactersInZoom.Add(character);
         }
+        else if (area.GetParent() as Garbage != null && area.GetParent() is Garbage garbage)
+        {
+            _garbageInZoom.Add(garbage);
+        }
     }
 
     private void _on_area_2d_area_exited(Area2D area)
@@ -57,6 +62,10 @@ public partial class PlayerCamera : Node2D
         if (area.GetParent() as Character != null && area.GetParent() is Character character)
         {
             _charactersInZoom.Remove(character);
+        }
+        else if (area.GetParent() as Garbage != null && area.GetParent() is Garbage garbage)
+        {
+            _garbageInZoom.Remove(garbage);
         }
     }
 

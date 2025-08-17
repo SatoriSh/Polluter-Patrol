@@ -1,17 +1,16 @@
-[gd_scene load_steps=32 format=4 uid="uid://d18xp8jrakhe7"]
+[gd_scene load_steps=31 format=4 uid="uid://bqgnco23dp1rj"]
 
-[ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_fkk1g"]
-[ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="2_ugcn1"]
-[ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="3_pimnq"]
-[ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="4_2bnyt"]
-[ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="5_n6eey"]
-[ext_resource type="PackedScene" uid="uid://bu44238t4f3y7" path="res://scenes/characters/character_3.tscn" id="6_qi5uv"]
-[ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="7_f6egh"]
+[ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_xy1qu"]
+[ext_resource type="PackedScene" uid="uid://d0ipwfuecc2ag" path="res://scenes/menu/pause.tscn" id="2_3mnpy"]
+[ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="2_jjvta"]
+[ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="3_3mnpy"]
+[ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="4_xy1qu"]
+[ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="5_65guy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fkk1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkk1g"]
-texture = ExtResource("2_ugcn1")
+texture = ExtResource("2_jjvta")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -336,67 +335,67 @@ texture = ExtResource("2_ugcn1")
 sources/0 = SubResource("TileSetAtlasSource_fkk1g")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sk5k4"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(0, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc4kc"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(48, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8va5"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(96, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dga24"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(144, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxy0u"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(192, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_excbq"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(240, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iav0o"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(288, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnkej"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(336, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mm8aj"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(384, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtwp4"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(432, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwr0g"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(480, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bahl2"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(528, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_np2pn"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(576, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6ha0"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(624, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmpev"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(672, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mkypq"]
-atlas = ExtResource("3_pimnq")
+atlas = ExtResource("3_3mnpy")
 region = Rect2(720, 176, 48, 44)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ndtll"]
@@ -495,10 +494,10 @@ _data = {
 &"hide": SubResource("Animation_ugcn1")
 }
 
-[node name="Level_3" type="Node2D" node_paths=PackedStringArray("_labelCountToWin")]
-script = ExtResource("1_fkk1g")
+[node name="Level_0" type="Node2D" node_paths=PackedStringArray("_labelCountToWin")]
+script = ExtResource("1_xy1qu")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
-_maxPhotographedCharactersCount = 5
+_maxPhotographedCharactersCount = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -507,14 +506,18 @@ offset_left = 8.0
 offset_top = 2.0
 offset_right = 64.0
 offset_bottom = 25.0
-scale = Vector2(2, 2)
-text = "Count: "
+theme_override_font_sizes/font_size = 85
+text = "Caught: 0/1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Background" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(915, 596)
 scale = Vector2(3823.5, 2313.33)
 texture = SubResource("CanvasTexture_fkk1g")
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("2_3mnpy")]
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -766,122 +769,29 @@ sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
 
-[node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("4_2bnyt")]
-position = Vector2(2180, 200)
-_pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2"), NodePath("../PointsForCharacter1/Marker2D3"), NodePath("../PointsForCharacter1/Marker2D4"), NodePath("../PointsForCharacter1/Marker2D5"), NodePath("../PointsForCharacter1/Marker2D6"), NodePath("../PointsForCharacter1/Marker2D7")]
-_timeToTakePicture = 1.5
+[node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("4_xy1qu")]
+position = Vector2(1963, 327)
+_pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2")]
+_timeToTakePicture = 1.0
 
 [node name="PointsForCharacter1" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(802, 171)
+position = Vector2(1188, 302)
 
 [node name="Marker2D2" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(795, 389)
+position = Vector2(1306, -17)
 
-[node name="Marker2D3" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(238, 393)
-
-[node name="Marker2D4" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(240, 187)
-
-[node name="Marker2D5" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(456, 190)
-
-[node name="Marker2D6" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(456, 56)
-
-[node name="Marker2D7" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(225, -57)
-
-[node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("5_n6eey")]
-position = Vector2(-358, 292)
-_pathPositions = [NodePath("../PointsForCharacter2/Marker2D"), NodePath("../PointsForCharacter2/Marker2D2"), NodePath("../PointsForCharacter2/Marker2D3"), NodePath("../PointsForCharacter2/Marker2D4"), NodePath("../PointsForCharacter2/Marker2D5")]
-_timeToTakePicture = 1.5
-
-[node name="PointsForCharacter2" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="PointsForCharacter2"]
-position = Vector2(127, 272)
-
-[node name="Marker2D2" type="Marker2D" parent="PointsForCharacter2"]
-position = Vector2(354, 372)
-
-[node name="Marker2D3" type="Marker2D" parent="PointsForCharacter2"]
-position = Vector2(620, 298)
-
-[node name="Marker2D4" type="Marker2D" parent="PointsForCharacter2"]
-position = Vector2(858, 229)
-
-[node name="Marker2D5" type="Marker2D" parent="PointsForCharacter2"]
-position = Vector2(1123, -40)
-
-[node name="Character3" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_qi5uv")]
-position = Vector2(628, -2071)
-_speed = 150.0
-_pathPositions = [NodePath("../PointsForCharacter3/Marker2D"), NodePath("../PointsForCharacter3/Marker2D2"), NodePath("../PointsForCharacter3/Marker2D3"), NodePath("../PointsForCharacter3/Marker2D4")]
-_timeToTakePicture = 0.51
-
-[node name="PointsForCharacter3" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="PointsForCharacter3"]
-position = Vector2(628, 72)
-
-[node name="Marker2D2" type="Marker2D" parent="PointsForCharacter3"]
-position = Vector2(729, 202)
-
-[node name="Marker2D3" type="Marker2D" parent="PointsForCharacter3"]
-position = Vector2(954, 334)
-
-[node name="Marker2D4" type="Marker2D" parent="PointsForCharacter3"]
-position = Vector2(2035, 377)
-
-[node name="PlayerCamera" parent="." instance=ExtResource("7_f6egh")]
+[node name="PlayerCamera" parent="." instance=ExtResource("5_65guy")]
 
 [node name="Triggers" type="Node2D" parent="."]
 
 [node name="Trigger1" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(456, 190)
+position = Vector2(1188, 302)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger1"]
-scale = Vector2(2.5, 2.5)
-shape = SubResource("CircleShape2D_oc4kc")
-
-[node name="Trigger2" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(954, 334)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger2"]
-scale = Vector2(2.5, 2.5)
-shape = SubResource("CircleShape2D_oc4kc")
-
-[node name="Trigger3" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(190, 319)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger3"]
-scale = Vector2(2.5, 2.5)
-shape = SubResource("CircleShape2D_oc4kc")
-
-[node name="Trigger4" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(668, 256)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger4"]
-scale = Vector2(2.5, 2.5)
-shape = SubResource("CircleShape2D_oc4kc")
-
-[node name="Trigger5" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(803, 173)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger5"]
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_oc4kc")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwslwob0y7367"]
+[gd_scene load_steps=7 format=3 uid="uid://bwslwob0y7367"]
 
 [ext_resource type="Texture2D" uid="uid://jw8nvbc8ctea" path="res://sprites/ground/124x124.png" id="1_b6b1d"]
 [ext_resource type="Script" uid="uid://dnnwka1nekti8" path="res://scenes/garbage/Garbage.cs" id="1_h37op"]
@@ -64,6 +64,8 @@ _data = {
 &"fall": SubResource("Animation_h37op")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h37op"]
+
 [node name="Garbage" type="Node2D" node_paths=PackedStringArray("_garbageSprites")]
 script = ExtResource("1_h37op")
 _garbageSprites = [NodePath("GarbagesSprites/Garbage1Sprite"), NodePath("GarbagesSprites/Garbage2Sprite"), NodePath("GarbagesSprites/Garbage3Sprite"), NodePath("GarbagesSprites/Garbage4Sprite")]
@@ -96,3 +98,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_we45p")
 }
 autoplay = "fall"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h37op")

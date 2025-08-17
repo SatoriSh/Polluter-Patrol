@@ -28,6 +28,35 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bh6tv"]
 
+[sub_resource type="Animation" id="Animation_c5pid"]
+resource_name = "ChangeScene"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeScene"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_2krcr"]
 length = 0.001
 tracks/0/type = "value"
@@ -58,35 +87,6 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_c5pid"]
-resource_name = "ChangeScene"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"ChangeScene"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jwb7q"]
 _data = {
 &"ChangeScene": SubResource("Animation_c5pid"),
@@ -96,7 +96,7 @@ _data = {
 
 [node name="LevelsMenu" type="Node2D" node_paths=PackedStringArray("_anim")]
 script = ExtResource("1_c5pid")
-_pathToScenes = PackedStringArray("", "", "", "res://scenes/levels/level_3.tscn", "", "", "", "", "")
+_pathToScenes = PackedStringArray("res://scenes/levels/level_0.tscn", "", "", "res://scenes/levels/level_3.tscn", "", "", "", "", "")
 _anim = NodePath("AnimationPlayer")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -242,4 +242,5 @@ libraries = {
 autoplay = "hide"
 
 [connection signal="button_down" from="ButtonToMenu" to="." method="_on_button_to_menu_button_down"]
+[connection signal="button_down" from="LevelsButtons/levelbutton0" to="." method="_on_levelbutton_0_button_down"]
 [connection signal="button_down" from="LevelsButtons/levelbutton3" to="." method="_on_levelbutton_3_button_down"]

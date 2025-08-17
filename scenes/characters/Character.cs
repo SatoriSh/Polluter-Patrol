@@ -73,7 +73,7 @@ public partial class Character : CharacterBody2D
     {
         if (area.IsInGroup("triggers"))
         {
-            ThrowOutGarbage();
+            CallDeferred(nameof(ThrowOutGarbage));
         }
     }
 
