@@ -211,5 +211,5 @@ libraries = {
 }
 
 [connection signal="button_down" from="ButtonToMenu" to="." method="_on_button_to_menu_button_down"]
-[connection signal="button_down" from="ButtonPauseOff" to="." method="_on_button_pause_off_button_down"]
+[connection signal="button_up" from="ButtonPauseOff" to="." method="_on_button_pause_off_button_up"]
 [connection signal="button_down" from="ChangeLevelButton" to="." method="_on_change_level_button_button_down"]

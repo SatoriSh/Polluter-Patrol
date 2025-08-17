@@ -14,6 +14,8 @@ public partial class PlayerCamera : Node2D
 
     public override void _Process(double delta)
     {
+        if (GetTree().Paused) return;
+        
         this.GlobalPosition = GetGlobalMousePosition();
 
         if (Input.IsActionJustPressed("take_picture"))

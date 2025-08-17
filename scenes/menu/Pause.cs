@@ -49,10 +49,11 @@ public partial class Pause : Node2D
         timer.Start();
     }
 
-    private void _on_button_pause_off_button_down()
+    private void _on_button_pause_off_button_up()
     {
         if (!_animPlaying)
         {
+            //GetViewport().SetInputAsHandled();
             UpdateWorldPause();
         }
     }
