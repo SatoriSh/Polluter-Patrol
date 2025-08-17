@@ -18,6 +18,8 @@ public partial class LevelsMenu : Node2D
 
     public override void _Ready()
     {
+        GetTree().Paused = false;
+
         _menuScene = GD.Load<PackedScene>("res://scenes/menu/menu.tscn");
 
         for (int i = 0; i < _scenes.Length; i++)

@@ -1,7 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0ipwfuecc2ag"]
+[gd_scene load_steps=18 format=3 uid="uid://d0ipwfuecc2ag"]
 
 [ext_resource type="Script" uid="uid://d1cm5ud2cbnin" path="res://scenes/menu/Pause.cs" id="1_4wejy"]
-[ext_resource type="Texture2D" uid="uid://j3n6mkpyv81" path="res://icon.svg" id="2_1mvc1"]
+[ext_resource type="Texture2D" uid="uid://ck1uam06ulr30" path="res://sprites/UI/buttons/levels/buttontomenu.png" id="2_w7v8u"]
+[ext_resource type="PackedScene" uid="uid://cl45c4g4lvdh3" path="res://scenes/menu/menu.tscn" id="2_yl1uf"]
+[ext_resource type="Texture2D" uid="uid://c4q5dqm0uea3v" path="res://sprites/UI/buttons/levels/buttontomenuhover.png" id="3_bbwxq"]
+[ext_resource type="PackedScene" uid="uid://clbklio73adve" path="res://scenes/menu/levels_menu.tscn" id="3_d33x0"]
+[ext_resource type="Texture2D" uid="uid://cwubklq8qwj7b" path="res://sprites/UI/buttons/buttonpauseoff.png" id="4_yl1uf"]
+[ext_resource type="Texture2D" uid="uid://clfa1vcpl0y42" path="res://sprites/UI/buttons/buttonpauseoffhover.png" id="5_d33x0"]
+[ext_resource type="Texture2D" uid="uid://brmj8rndg0vmp" path="res://sprites/UI/buttons/levels/buttontolevels.png" id="6_8ptb7"]
+[ext_resource type="Texture2D" uid="uid://b0mthh85vxcrt" path="res://sprites/UI/buttons/levels/buttontolevelshover.png" id="7_t1j0g"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w7v8u"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4wejy"]
 
 [sub_resource type="Animation" id="Animation_4wejy"]
 resource_name = "show"
@@ -17,21 +28,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_1mvc1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_1mso8"]
@@ -50,9 +46,98 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_bbwxq"]
+resource_name = "change_to_menu"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeSceneToMenu"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_yl1uf"]
+resource_name = "change_to_levels"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeSceneToLevels"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_d33x0"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1mso8"]
 _data = {
-&"RESET": SubResource("Animation_1mvc1"),
+&"RESET": SubResource("Animation_d33x0"),
+&"change_to_levels": SubResource("Animation_yl1uf"),
+&"change_to_menu": SubResource("Animation_bbwxq"),
 &"hide": SubResource("Animation_1mso8"),
 &"show": SubResource("Animation_4wejy")
 }
@@ -62,18 +147,69 @@ process_mode = 3
 modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_4wejy")
 _anim = NodePath("AnimationPlayer")
+_menuScene = ExtResource("2_yl1uf")
+_levelsScene = ExtResource("3_d33x0")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 913.0
-offset_top = 418.0
-offset_right = 953.0
-offset_bottom = 458.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(976, 432)
-texture = ExtResource("2_1mvc1")
+[node name="Background2" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 0)
+position = Vector2(950.25, 538.75)
+scale = Vector2(4307.5, 2443.14)
+texture = SubResource("CanvasTexture_w7v8u")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(970.25, 535)
+scale = Vector2(2659.5, 1493.1)
+texture = SubResource("CanvasTexture_4wejy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 815.0
+offset_top = 142.0
+offset_right = 1104.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 100
+text = "Pause"
+
+[node name="ButtonToMenu" type="TextureButton" parent="."]
+offset_left = 602.0
+offset_top = 458.0
+offset_right = 642.0
+offset_bottom = 498.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("2_w7v8u")
+texture_pressed = ExtResource("2_w7v8u")
+texture_hover = ExtResource("3_bbwxq")
+stretch_mode = 4
+
+[node name="ButtonPauseOff" type="TextureButton" parent="."]
+offset_left = 873.0
+offset_top = 458.0
+offset_right = 913.0
+offset_bottom = 498.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("4_yl1uf")
+texture_pressed = ExtResource("4_yl1uf")
+texture_hover = ExtResource("5_d33x0")
+stretch_mode = 4
+
+[node name="ChangeLevelButton" type="TextureButton" parent="."]
+offset_left = 1153.0
+offset_top = 458.0
+offset_right = 1193.0
+offset_bottom = 498.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("6_8ptb7")
+texture_pressed = ExtResource("6_8ptb7")
+texture_hover = ExtResource("7_t1j0g")
+stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_1mso8")
 }
+
+[connection signal="button_down" from="ButtonToMenu" to="." method="_on_button_to_menu_button_down"]
+[connection signal="button_down" from="ButtonPauseOff" to="." method="_on_button_pause_off_button_down"]
+[connection signal="button_down" from="ChangeLevelButton" to="." method="_on_change_level_button_button_down"]

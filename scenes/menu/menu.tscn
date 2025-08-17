@@ -870,6 +870,7 @@ _data = {
 [sub_resource type="CanvasTexture" id="CanvasTexture_f2fum"]
 
 [node name="Menu" type="Node2D" node_paths=PackedStringArray("anim")]
+process_mode = 3
 script = ExtResource("1_3y2rt")
 anim = NodePath("AnimationPlayer")
 

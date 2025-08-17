@@ -772,7 +772,7 @@ frame_progress = 0.179089
 [node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("4_xy1qu")]
 position = Vector2(1963, 327)
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2")]
-_timeToTakePicture = 1.0
+_timeToTakePicture = 1.5
 
 [node name="PointsForCharacter1" type="Node2D" parent="."]
 
