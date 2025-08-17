@@ -18,11 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 SaveSystem="*res://addons/save_system/save_system.gd"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-
-[dialogue_manager]
-
-runtime/advanced/uses_dotnet=true
 
 [display]
 
@@ -36,7 +31,7 @@ project/assembly_name="Polluter Patrol"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/project_time_tracker/plugin.cfg", "res://addons/save_system/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/project_time_tracker/plugin.cfg", "res://addons/save_system/plugin.cfg")
 
 [global_group]
 
