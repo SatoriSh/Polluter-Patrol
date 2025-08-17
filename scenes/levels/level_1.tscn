@@ -680,7 +680,7 @@ position = Vector2(628, -1649)
 _speed = 150.0
 _pathPositions = [NodePath("../PointsForCharacter3/Marker2D"), NodePath("../PointsForCharacter3/Marker2D2"), NodePath("../PointsForCharacter3/Marker2D3"), NodePath("../PointsForCharacter3/Marker2D4")]
 _garbageTimerWaitTime = 13.5
-_timeToTakePicture = 0.4
+_timeToTakePicture = 0.51
 
 [node name="PointsForCharacter3" type="Node2D" parent="."]
 

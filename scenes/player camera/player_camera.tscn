@@ -1,8 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmc3tt4vi5qpu"]
 
 [ext_resource type="Script" uid="uid://bhpx6yjfakrwu" path="res://scenes/player camera/PlayerCamera.cs" id="1_6vm8v"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_6vm8v"]
+[ext_resource type="Texture2D" uid="uid://dbtikkhm232am" path="res://sprites/camera_border.png" id="2_nivh7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nivh7"]
 
@@ -40,11 +39,16 @@ scale = Vector2(1.3, 1.3)
 script = ExtResource("1_6vm8v")
 _anim = NodePath("AnimationPlayer")
 
-[node name="CameraSprite" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 0.501961)
-position = Vector2(2.27374e-13, 0)
-scale = Vector2(98, 64.0928)
-texture = SubResource("CanvasTexture_6vm8v")
+[node name="CameraBorder" type="NinePatchRect" parent="."]
+offset_left = -50.0
+offset_top = -33.0769
+offset_bottom = -0.0769272
+scale = Vector2(2, 2)
+texture = ExtResource("2_nivh7")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="CameraFlashSprite" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
