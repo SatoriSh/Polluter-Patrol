@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmc3tt4vi5qpu"]
 
 [ext_resource type="Script" uid="uid://bhpx6yjfakrwu" path="res://scenes/player camera/PlayerCamera.cs" id="1_6vm8v"]
-[ext_resource type="Texture2D" uid="uid://dbtikkhm232am" path="res://sprites/camera_border.png" id="2_nivh7"]
+[ext_resource type="Texture2D" uid="uid://dbtikkhm232am" path="res://sprites/UI/camera/camera_border.png" id="2_nivh7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nivh7"]
 
