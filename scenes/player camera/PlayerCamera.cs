@@ -9,13 +9,11 @@ public partial class PlayerCamera : Node2D
 
     private List<Character> _charactersInZoom = new List<Character>();
     private List<Garbage> _garbageInZoom = new List<Garbage>();
-
-    //public override void _Ready() => this.Visible = true;
-
+    
     public override void _Process(double delta)
     {
         if (GetTree().Paused) return;
-        
+
         this.GlobalPosition = GetGlobalMousePosition();
 
         if (Input.IsActionJustPressed("take_picture"))

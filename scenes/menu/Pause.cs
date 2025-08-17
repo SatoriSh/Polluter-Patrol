@@ -53,7 +53,6 @@ public partial class Pause : Node2D
     {
         if (!_animPlaying)
         {
-            //GetViewport().SetInputAsHandled();
             UpdateWorldPause();
         }
     }
