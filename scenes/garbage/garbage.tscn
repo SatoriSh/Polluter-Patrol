@@ -66,7 +66,7 @@ _data = {
 
 [node name="Garbage" type="Node2D" node_paths=PackedStringArray("_garbageSprites")]
 script = ExtResource("1_h37op")
-_garbageSprites = [NodePath("GarbagesSprites/Garbage1Sprite"), NodePath("GarbagesSprites/Garbage2Sprite"), NodePath("GarbagesSprites/Garbage3Sprite")]
+_garbageSprites = [NodePath("GarbagesSprites/Garbage1Sprite"), NodePath("GarbagesSprites/Garbage2Sprite"), NodePath("GarbagesSprites/Garbage3Sprite"), NodePath("GarbagesSprites/Garbage4Sprite")]
 
 [node name="GarbagesSprites" type="Node2D" parent="."]
 scale = Vector2(0.75, 0.75)
@@ -85,6 +85,11 @@ region_rect = Rect2(36.0881, 135.014, 22.894, 18.2036)
 texture = ExtResource("1_b6b1d")
 region_enabled = true
 region_rect = Rect2(4.46713, 166.64, 22.6707, 18.3152)
+
+[node name="Garbage4Sprite" type="Sprite2D" parent="GarbagesSprites"]
+texture = ExtResource("1_b6b1d")
+region_enabled = true
+region_rect = Rect2(36.6677, 166.638, 22.2371, 19.621)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
