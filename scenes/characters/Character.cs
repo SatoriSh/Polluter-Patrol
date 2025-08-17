@@ -11,7 +11,7 @@ public partial class Character : CharacterBody2D
     public bool CanTakePicture = false;
     public bool AlreadyBeenPhotographed = false;
 
-    private float _minDistanceToNextPosition = 25f;
+    private float _minDistanceToNextPosition = 10f;
 
     private Vector2 _direction;
 
@@ -23,25 +23,17 @@ public partial class Character : CharacterBody2D
     [Export]
     private PackedScene _garbageScene;
 
-    private Timer _garbageTimer = new Timer();
     private Timer _timerToTakePicture = new Timer();
 
-    [Export]
-    private float _garbageTimerWaitTime;
     [Export]
     private float _timeToTakePicture;
 
     public override void _Ready()
     {
-        _garbageTimer.Autostart = true;
-        _garbageTimer.WaitTime = _garbageTimerWaitTime;
-        _garbageTimer.Timeout += OnGarbageTimerTimeout;
-
         _timerToTakePicture.Autostart = false;
         _timerToTakePicture.WaitTime = _timeToTakePicture;
         _timerToTakePicture.Timeout += OnTimerToTakePictureTimeOut;
 
-        AddChild(_garbageTimer);
         AddChild(_timerToTakePicture);
     }
 
@@ -77,7 +69,15 @@ public partial class Character : CharacterBody2D
         return this.GlobalPosition.DistanceTo(_pathPositions[_pathPositionIndex].GlobalPosition) <= _minDistanceToNextPosition;
     }
 
-    private void OnGarbageTimerTimeout()
+    private void _on_area_2d_area_entered(Area2D area)
+    {
+        if (area.IsInGroup("triggers"))
+        {
+            ThrowOutGarbage();
+        }
+    }
+
+    private void ThrowOutGarbage()
     {
         var tempScene = _garbageScene.Instantiate() as Node2D;
         tempScene.GlobalPosition = this.GlobalPosition;

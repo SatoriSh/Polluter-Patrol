@@ -22,6 +22,10 @@ project/assembly_name="Polluter Patrol"
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/project_time_tracker/plugin.cfg")
 
+[global_group]
+
+triggers=""
+
 [input]
 
 take_picture={

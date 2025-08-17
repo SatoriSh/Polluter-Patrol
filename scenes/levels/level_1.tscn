@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b8jm1hg5pmy0j"]
+[gd_scene load_steps=28 format=4 uid="uid://b8jm1hg5pmy0j"]
 
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="1_6iamk"]
 [ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_6761a"]
@@ -453,6 +453,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_oc4kc"]
+
 [node name="Level 3" type="Node2D" node_paths=PackedStringArray("_labelCountToWin")]
 script = ExtResource("1_6761a")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
@@ -626,8 +628,7 @@ frame_progress = 0.179089
 [node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("3_nsrm0")]
 position = Vector2(1260, 200)
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2"), NodePath("../PointsForCharacter1/Marker2D3"), NodePath("../PointsForCharacter1/Marker2D4"), NodePath("../PointsForCharacter1/Marker2D5"), NodePath("../PointsForCharacter1/Marker2D6"), NodePath("../PointsForCharacter1/Marker2D7")]
-_garbageTimerWaitTime = 6.3
-_timeToTakePicture = 1.0
+_timeToTakePicture = 1.5
 
 [node name="PointsForCharacter1" type="Node2D" parent="."]
 
@@ -655,8 +656,7 @@ position = Vector2(225, -57)
 [node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("5_sk5k4")]
 position = Vector2(-47, 292)
 _pathPositions = [NodePath("../PointsForCharacter2/Marker2D"), NodePath("../PointsForCharacter2/Marker2D2"), NodePath("../PointsForCharacter2/Marker2D3"), NodePath("../PointsForCharacter2/Marker2D4"), NodePath("../PointsForCharacter2/Marker2D5")]
-_garbageTimerWaitTime = 9.0
-_timeToTakePicture = 1.0
+_timeToTakePicture = 1.5
 
 [node name="PointsForCharacter2" type="Node2D" parent="."]
 
@@ -679,7 +679,6 @@ position = Vector2(1201, 326)
 position = Vector2(628, -1649)
 _speed = 150.0
 _pathPositions = [NodePath("../PointsForCharacter3/Marker2D"), NodePath("../PointsForCharacter3/Marker2D2"), NodePath("../PointsForCharacter3/Marker2D3"), NodePath("../PointsForCharacter3/Marker2D4")]
-_garbageTimerWaitTime = 13.5
 _timeToTakePicture = 0.51
 
 [node name="PointsForCharacter3" type="Node2D" parent="."]
@@ -697,3 +696,50 @@ position = Vector2(954, 334)
 position = Vector2(1226, 377)
 
 [node name="PlayerCamera" parent="." instance=ExtResource("4_x42e6")]
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="Trigger1" type="Area2D" parent="Triggers" groups=["triggers"]]
+position = Vector2(456, 190)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger1"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_oc4kc")
+
+[node name="Trigger2" type="Area2D" parent="Triggers" groups=["triggers"]]
+position = Vector2(954, 334)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger2"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_oc4kc")
+
+[node name="Trigger3" type="Area2D" parent="Triggers" groups=["triggers"]]
+position = Vector2(190, 319)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger3"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_oc4kc")
+
+[node name="Trigger4" type="Area2D" parent="Triggers" groups=["triggers"]]
+position = Vector2(668, 256)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger4"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_oc4kc")
+
+[node name="Trigger5" type="Area2D" parent="Triggers" groups=["triggers"]]
+position = Vector2(803, 173)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger5"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_oc4kc")
