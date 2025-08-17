@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=4 uid="uid://cv8h4a0ah715y"]
+[gd_scene load_steps=33 format=4 uid="uid://cv8h4a0ah715y"]
 
 [ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_xy1qu"]
 [ext_resource type="PackedScene" uid="uid://r46nf8norvus" path="res://scenes/menu/pause.tscn" id="2_3mnpy"]
+[ext_resource type="Script" uid="uid://dqa7hxjaajwuq" path="res://scenes/levels/TutorialLabel.cs" id="2_6ayib"]
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="2_jjvta"]
 [ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="3_3mnpy"]
 [ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="4_xy1qu"]
@@ -488,16 +489,48 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_3mnpy"]
+resource_name = "change_to_levels"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeToLevelsScene"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2bnyt"]
 _data = {
 &"RESET": SubResource("Animation_pimnq"),
+&"change_to_levels": SubResource("Animation_3mnpy"),
 &"hide": SubResource("Animation_ugcn1")
 }
 
-[node name="Level_0" type="Node2D" node_paths=PackedStringArray("_labelCountToWin")]
+[node name="Level_0" type="Node2D" node_paths=PackedStringArray("_labelCountToWin", "_anim")]
 script = ExtResource("1_xy1qu")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
 _maxPhotographedCharactersCount = 1
+_anim = NodePath("AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -510,6 +543,20 @@ theme_override_font_sizes/font_size = 85
 text = "Caught: "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TutorialLabel" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("_level")]
+modulate = Color(1, 0.956863, 1, 1)
+offset_left = 257.0
+offset_top = 626.0
+offset_right = 1709.0
+offset_bottom = 755.0
+theme_override_font_sizes/font_size = 45
+text = "Photograph people standing near litter to document their violation
+(left click, enter or space)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_6ayib")
+_level = NodePath("../..")
 
 [node name="Background" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
@@ -770,7 +817,7 @@ autoplay = "default"
 frame_progress = 0.179089
 
 [node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("4_xy1qu")]
-position = Vector2(1963, 327)
+position = Vector2(2527, 327)
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2")]
 _timeToTakePicture = 1.5
 
