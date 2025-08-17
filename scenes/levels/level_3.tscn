@@ -1,15 +1,15 @@
-[gd_scene load_steps=28 format=4 uid="uid://b8jm1hg5pmy0j"]
+[gd_scene load_steps=28 format=4 uid="uid://d18xp8jrakhe7"]
 
-[ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="1_6iamk"]
-[ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_6761a"]
-[ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="2_nsrm0"]
-[ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="3_nsrm0"]
-[ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="4_x42e6"]
-[ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="5_sk5k4"]
-[ext_resource type="PackedScene" uid="uid://bu44238t4f3y7" path="res://scenes/characters/character_3.tscn" id="6_oc4kc"]
+[ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_fkk1g"]
+[ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="2_ugcn1"]
+[ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="3_pimnq"]
+[ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="4_2bnyt"]
+[ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="5_n6eey"]
+[ext_resource type="PackedScene" uid="uid://bu44238t4f3y7" path="res://scenes/characters/character_3.tscn" id="6_qi5uv"]
+[ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="7_f6egh"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x42e6"]
-texture = ExtResource("1_6iamk")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkk1g"]
+texture = ExtResource("2_ugcn1")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -331,70 +331,70 @@ texture = ExtResource("1_6iamk")
 19:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_6761a"]
-sources/0 = SubResource("TileSetAtlasSource_x42e6")
+sources/0 = SubResource("TileSetAtlasSource_fkk1g")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sk5k4"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(0, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc4kc"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(48, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8va5"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(96, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dga24"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(144, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxy0u"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(192, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_excbq"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(240, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iav0o"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(288, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnkej"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(336, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mm8aj"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(384, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtwp4"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(432, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwr0g"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(480, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bahl2"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(528, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_np2pn"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(576, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6ha0"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(624, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmpev"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(672, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mkypq"]
-atlas = ExtResource("2_nsrm0")
+atlas = ExtResource("3_pimnq")
 region = Rect2(720, 176, 48, 44)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ndtll"]
@@ -455,8 +455,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oc4kc"]
 
-[node name="Level 3" type="Node2D" node_paths=PackedStringArray("_labelCountToWin")]
-script = ExtResource("1_6761a")
+[node name="Level_3" type="Node2D" node_paths=PackedStringArray("_labelCountToWin")]
+scale = Vector2(1.615, 1.615)
+script = ExtResource("1_fkk1g")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
 _maxPhotographedCharactersCount = 5
 
@@ -625,7 +626,7 @@ sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
 
-[node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("3_nsrm0")]
+[node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("4_2bnyt")]
 position = Vector2(1260, 200)
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2"), NodePath("../PointsForCharacter1/Marker2D3"), NodePath("../PointsForCharacter1/Marker2D4"), NodePath("../PointsForCharacter1/Marker2D5"), NodePath("../PointsForCharacter1/Marker2D6"), NodePath("../PointsForCharacter1/Marker2D7")]
 _timeToTakePicture = 1.5
@@ -653,7 +654,7 @@ position = Vector2(456, 56)
 [node name="Marker2D7" type="Marker2D" parent="PointsForCharacter1"]
 position = Vector2(225, -57)
 
-[node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("5_sk5k4")]
+[node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("5_n6eey")]
 position = Vector2(-47, 292)
 _pathPositions = [NodePath("../PointsForCharacter2/Marker2D"), NodePath("../PointsForCharacter2/Marker2D2"), NodePath("../PointsForCharacter2/Marker2D3"), NodePath("../PointsForCharacter2/Marker2D4"), NodePath("../PointsForCharacter2/Marker2D5")]
 _timeToTakePicture = 1.5
@@ -675,7 +676,7 @@ position = Vector2(858, 229)
 [node name="Marker2D5" type="Marker2D" parent="PointsForCharacter2"]
 position = Vector2(1201, 326)
 
-[node name="Character3" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_oc4kc")]
+[node name="Character3" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_qi5uv")]
 position = Vector2(628, -1649)
 _speed = 150.0
 _pathPositions = [NodePath("../PointsForCharacter3/Marker2D"), NodePath("../PointsForCharacter3/Marker2D2"), NodePath("../PointsForCharacter3/Marker2D3"), NodePath("../PointsForCharacter3/Marker2D4")]
@@ -695,7 +696,7 @@ position = Vector2(954, 334)
 [node name="Marker2D4" type="Marker2D" parent="PointsForCharacter3"]
 position = Vector2(1226, 377)
 
-[node name="PlayerCamera" parent="." instance=ExtResource("4_x42e6")]
+[node name="PlayerCamera" parent="." instance=ExtResource("7_f6egh")]
 
 [node name="Triggers" type="Node2D" parent="."]
 
