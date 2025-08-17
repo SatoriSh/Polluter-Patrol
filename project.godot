@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Polluter Patrol"
+run/main_scene="uid://cl45c4g4lvdh3"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 

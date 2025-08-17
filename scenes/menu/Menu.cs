@@ -3,13 +3,17 @@ using System;
 
 public partial class Menu : Node2D
 {
-    [Export]
     private PackedScene _levelsScene;
 
     [Export]
     private AnimationPlayer anim;
 
     private bool _animPlaying = false;
+
+    public override void _Ready()
+    {
+        _levelsScene = GD.Load<PackedScene>("res://scenes/menu/levels_menu.tscn");
+    }
 
     private void _on_play_button_button_down()
     {

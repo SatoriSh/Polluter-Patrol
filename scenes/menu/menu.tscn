@@ -1,9 +1,8 @@
-[gd_scene load_steps=36 format=4 uid="uid://cl45c4g4lvdh3"]
+[gd_scene load_steps=35 format=4 uid="uid://cl45c4g4lvdh3"]
 
 [ext_resource type="Script" uid="uid://cn0d0dxbnshn5" path="res://scenes/menu/Menu.cs" id="1_3y2rt"]
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="1_klgdb"]
 [ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="2_mcvr8"]
-[ext_resource type="PackedScene" uid="uid://d18xp8jrakhe7" path="res://scenes/levels/level_3.tscn" id="2_t0a87"]
 [ext_resource type="Texture2D" uid="uid://b5ivea8c0djhc" path="res://sprites/UI/buttons/play_button_UI.png" id="3_037ec"]
 [ext_resource type="Texture2D" uid="uid://ctf0o0qogsbmp" path="res://sprites/UI/buttons/play_button_hover_UI.png" id="4_y1o0p"]
 [ext_resource type="Texture2D" uid="uid://bant3hl88m71y" path="res://sprites/UI/buttons/exit_button_UI.png" id="5_r8yej"]
@@ -786,6 +785,35 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_k48pe"]
+resource_name = "exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ExitGame"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_qo0fc"]
 resource_name = "hide"
 length = 0.5
@@ -831,35 +859,6 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_k48pe"]
-resource_name = "exit"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"ExitGame"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k48pe"]
 _data = {
 &"RESET": SubResource("Animation_t0a87"),
@@ -872,7 +871,6 @@ _data = {
 
 [node name="Menu" type="Node2D" node_paths=PackedStringArray("anim")]
 script = ExtResource("1_3y2rt")
-_levelsScene = ExtResource("2_t0a87")
 anim = NodePath("AnimationPlayer")
 
 [node name="Ground" type="Node2D" parent="."]

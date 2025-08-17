@@ -1,0 +1,225 @@
+[gd_scene load_steps=12 format=3 uid="uid://clbklio73adve"]
+
+[ext_resource type="Texture2D" uid="uid://b2t85wlmctsik" path="res://sprites/UI/buttons/levels/level1button.png" id="1_1gfdk"]
+[ext_resource type="Script" uid="uid://cbbjc23eqc2m8" path="res://scenes/menu/LevelsMenu.cs" id="1_c5pid"]
+[ext_resource type="Texture2D" uid="uid://ck1uam06ulr30" path="res://sprites/UI/buttons/levels/buttontomenu.png" id="2_2krcr"]
+[ext_resource type="Texture2D" uid="uid://cr0h7gkoxu0qu" path="res://sprites/UI/buttons/levels/level1buttonhover.png" id="2_nvge3"]
+[ext_resource type="Texture2D" uid="uid://c4q5dqm0uea3v" path="res://sprites/UI/buttons/levels/buttontomenuhover.png" id="3_jwb7q"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uehtd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bh6tv"]
+
+[sub_resource type="Animation" id="Animation_c5pid"]
+resource_name = "change_to_menu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeSceneToMenu"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2krcr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jwb7q"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jwb7q"]
+_data = {
+&"RESET": SubResource("Animation_2krcr"),
+&"change_to_menu": SubResource("Animation_c5pid"),
+&"hide": SubResource("Animation_jwb7q")
+}
+
+[node name="LevelsMenu" type="Node2D" node_paths=PackedStringArray("_anim")]
+script = ExtResource("1_c5pid")
+_anim = NodePath("AnimationPlayer")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0.352941, 1)
+position = Vector2(932.5, 530.5)
+scale = Vector2(2945, 1566.96)
+texture = SubResource("CanvasTexture_uehtd")
+
+[node name="ButtonToMenu" type="TextureButton" parent="."]
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 66.0
+offset_bottom = 58.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("2_2krcr")
+texture_pressed = ExtResource("2_2krcr")
+texture_hover = ExtResource("3_jwb7q")
+stretch_mode = 4
+
+[node name="LevelsButtons" type="Node2D" parent="."]
+position = Vector2(0, 36)
+
+[node name="levelbutton1" type="TextureButton" parent="LevelsButtons"]
+offset_left = 679.0
+offset_top = 133.0
+offset_right = 719.0
+offset_bottom = 173.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton2" type="TextureButton" parent="LevelsButtons"]
+offset_left = 874.0
+offset_top = 133.0
+offset_right = 914.0
+offset_bottom = 173.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton3" type="TextureButton" parent="LevelsButtons"]
+offset_left = 1069.0
+offset_top = 133.0
+offset_right = 1109.0
+offset_bottom = 173.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton4" type="TextureButton" parent="LevelsButtons"]
+offset_left = 681.0
+offset_top = 325.0
+offset_right = 721.0
+offset_bottom = 365.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton5" type="TextureButton" parent="LevelsButtons"]
+offset_left = 871.0
+offset_top = 325.0
+offset_right = 911.0
+offset_bottom = 365.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton6" type="TextureButton" parent="LevelsButtons"]
+offset_left = 1064.0
+offset_top = 325.0
+offset_right = 1104.0
+offset_bottom = 365.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton7" type="TextureButton" parent="LevelsButtons"]
+offset_left = 679.0
+offset_top = 513.0
+offset_right = 719.0
+offset_bottom = 553.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton8" type="TextureButton" parent="LevelsButtons"]
+offset_left = 872.0
+offset_top = 513.0
+offset_right = 912.0
+offset_bottom = 553.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton9" type="TextureButton" parent="LevelsButtons"]
+offset_left = 1065.0
+offset_top = 513.0
+offset_right = 1105.0
+offset_bottom = 553.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="levelbutton10" type="TextureButton" parent="LevelsButtons"]
+offset_left = 874.0
+offset_top = 709.0
+offset_right = 914.0
+offset_bottom = 749.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("1_1gfdk")
+texture_pressed = ExtResource("1_1gfdk")
+texture_hover = ExtResource("2_nvge3")
+stretch_mode = 4
+
+[node name="Background2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(940.25, 533.75)
+scale = Vector2(4677.5, 2656.34)
+texture = SubResource("CanvasTexture_bh6tv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jwb7q")
+}
+autoplay = "hide"
+
+[connection signal="button_down" from="ButtonToMenu" to="." method="_on_button_to_menu_button_down"]
