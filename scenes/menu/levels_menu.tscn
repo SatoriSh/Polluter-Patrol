@@ -1,10 +1,28 @@
-[gd_scene load_steps=12 format=3 uid="uid://clbklio73adve"]
+[gd_scene load_steps=30 format=3 uid="uid://clbklio73adve"]
 
 [ext_resource type="Texture2D" uid="uid://b2t85wlmctsik" path="res://sprites/UI/buttons/levels/level1button.png" id="1_1gfdk"]
 [ext_resource type="Script" uid="uid://cbbjc23eqc2m8" path="res://scenes/menu/LevelsMenu.cs" id="1_c5pid"]
 [ext_resource type="Texture2D" uid="uid://ck1uam06ulr30" path="res://sprites/UI/buttons/levels/buttontomenu.png" id="2_2krcr"]
 [ext_resource type="Texture2D" uid="uid://cr0h7gkoxu0qu" path="res://sprites/UI/buttons/levels/level1buttonhover.png" id="2_nvge3"]
 [ext_resource type="Texture2D" uid="uid://c4q5dqm0uea3v" path="res://sprites/UI/buttons/levels/buttontomenuhover.png" id="3_jwb7q"]
+[ext_resource type="Texture2D" uid="uid://dc625p1dfrute" path="res://sprites/UI/buttons/levels/level0button.png" id="4_jwb7q"]
+[ext_resource type="Texture2D" uid="uid://dl7dvwjpfxn8w" path="res://sprites/UI/buttons/levels/level0buttonhover.png" id="5_bh6tv"]
+[ext_resource type="Texture2D" uid="uid://b36crwcseoraq" path="res://sprites/UI/buttons/levels/level2button.png" id="8_rf8is"]
+[ext_resource type="Texture2D" uid="uid://br1e1oc2k6mfs" path="res://sprites/UI/buttons/levels/level2buttonhover.png" id="9_y0oo3"]
+[ext_resource type="Texture2D" uid="uid://bnxbhabs2xxsw" path="res://sprites/UI/buttons/levels/level3button.png" id="10_ajb7u"]
+[ext_resource type="Texture2D" uid="uid://ci0vpn8ooy55i" path="res://sprites/UI/buttons/levels/level3buttonhover.png" id="11_ueat8"]
+[ext_resource type="Texture2D" uid="uid://bol2ng487alyu" path="res://sprites/UI/buttons/levels/level4button.png" id="12_rip78"]
+[ext_resource type="Texture2D" uid="uid://jcoqchjc1wxm" path="res://sprites/UI/buttons/levels/level4buttonhover.png" id="13_nj4j8"]
+[ext_resource type="Texture2D" uid="uid://bscxfe34ldm28" path="res://sprites/UI/buttons/levels/level5button.png" id="14_i3nao"]
+[ext_resource type="Texture2D" uid="uid://erd5pqjet7kv" path="res://sprites/UI/buttons/levels/level5buttonhover.png" id="15_qcfct"]
+[ext_resource type="Texture2D" uid="uid://drk4m58o3h5kb" path="res://sprites/UI/buttons/levels/level6button.png" id="16_h42ir"]
+[ext_resource type="Texture2D" uid="uid://cppb0t1b37mv4" path="res://sprites/UI/buttons/levels/level6buttonhover.png" id="17_h7fm4"]
+[ext_resource type="Texture2D" uid="uid://cg3xwt0j3rkna" path="res://sprites/UI/buttons/levels/level7button.png" id="18_b7v7g"]
+[ext_resource type="Texture2D" uid="uid://unvdef76fgnp" path="res://sprites/UI/buttons/levels/level7buttonhover.png" id="19_0g4af"]
+[ext_resource type="Texture2D" uid="uid://dnpx1b2udob40" path="res://sprites/UI/buttons/levels/level8button.png" id="20_f1fko"]
+[ext_resource type="Texture2D" uid="uid://d2w8fd65st4xh" path="res://sprites/UI/buttons/levels/level8buttonhover.png" id="21_p4rgi"]
+[ext_resource type="Texture2D" uid="uid://cx8bvlfyrnwkc" path="res://sprites/UI/buttons/levels/level9button.png" id="22_ptu1b"]
+[ext_resource type="Texture2D" uid="uid://3tqrug6a40x0" path="res://sprites/UI/buttons/levels/level9buttonhover.png" id="23_awkq5"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uehtd"]
 
@@ -106,9 +124,9 @@ offset_top = 133.0
 offset_right = 719.0
 offset_bottom = 173.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("4_jwb7q")
+texture_pressed = ExtResource("4_jwb7q")
+texture_hover = ExtResource("5_bh6tv")
 stretch_mode = 4
 
 [node name="levelbutton2" type="TextureButton" parent="LevelsButtons"]
@@ -128,9 +146,9 @@ offset_top = 133.0
 offset_right = 1109.0
 offset_bottom = 173.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("8_rf8is")
+texture_pressed = ExtResource("8_rf8is")
+texture_hover = ExtResource("9_y0oo3")
 stretch_mode = 4
 
 [node name="levelbutton4" type="TextureButton" parent="LevelsButtons"]
@@ -139,31 +157,31 @@ offset_top = 325.0
 offset_right = 721.0
 offset_bottom = 365.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("10_ajb7u")
+texture_pressed = ExtResource("10_ajb7u")
+texture_hover = ExtResource("11_ueat8")
 stretch_mode = 4
 
 [node name="levelbutton5" type="TextureButton" parent="LevelsButtons"]
-offset_left = 871.0
+offset_left = 873.0
 offset_top = 325.0
-offset_right = 911.0
+offset_right = 913.0
 offset_bottom = 365.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("12_rip78")
+texture_pressed = ExtResource("12_rip78")
+texture_hover = ExtResource("13_nj4j8")
 stretch_mode = 4
 
 [node name="levelbutton6" type="TextureButton" parent="LevelsButtons"]
-offset_left = 1064.0
+offset_left = 1066.0
 offset_top = 325.0
-offset_right = 1104.0
+offset_right = 1106.0
 offset_bottom = 365.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("14_i3nao")
+texture_pressed = ExtResource("14_i3nao")
+texture_hover = ExtResource("15_qcfct")
 stretch_mode = 4
 
 [node name="levelbutton7" type="TextureButton" parent="LevelsButtons"]
@@ -172,20 +190,20 @@ offset_top = 513.0
 offset_right = 719.0
 offset_bottom = 553.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("16_h42ir")
+texture_pressed = ExtResource("16_h42ir")
+texture_hover = ExtResource("17_h7fm4")
 stretch_mode = 4
 
 [node name="levelbutton8" type="TextureButton" parent="LevelsButtons"]
-offset_left = 872.0
+offset_left = 874.0
 offset_top = 513.0
-offset_right = 912.0
+offset_right = 914.0
 offset_bottom = 553.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("18_b7v7g")
+texture_pressed = ExtResource("18_b7v7g")
+texture_hover = ExtResource("19_0g4af")
 stretch_mode = 4
 
 [node name="levelbutton9" type="TextureButton" parent="LevelsButtons"]
@@ -194,20 +212,20 @@ offset_top = 513.0
 offset_right = 1105.0
 offset_bottom = 553.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("20_f1fko")
+texture_pressed = ExtResource("20_f1fko")
+texture_hover = ExtResource("21_p4rgi")
 stretch_mode = 4
 
 [node name="levelbutton10" type="TextureButton" parent="LevelsButtons"]
-offset_left = 874.0
+offset_left = 876.0
 offset_top = 709.0
-offset_right = 914.0
+offset_right = 916.0
 offset_bottom = 749.0
 scale = Vector2(4.5, 4.5)
-texture_normal = ExtResource("1_1gfdk")
-texture_pressed = ExtResource("1_1gfdk")
-texture_hover = ExtResource("2_nvge3")
+texture_normal = ExtResource("22_ptu1b")
+texture_pressed = ExtResource("22_ptu1b")
+texture_hover = ExtResource("23_awkq5")
 stretch_mode = 4
 
 [node name="Background2" type="Sprite2D" parent="."]
