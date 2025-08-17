@@ -455,7 +455,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oc4kc"]
-radius = 62.482
+radius = 13.2966
 
 [sub_resource type="Animation" id="Animation_pimnq"]
 length = 0.001
@@ -507,7 +507,7 @@ offset_top = 2.0
 offset_right = 64.0
 offset_bottom = 25.0
 theme_override_font_sizes/font_size = 85
-text = "Caught: 0/1"
+text = "Caught: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -780,14 +780,14 @@ _timeToTakePicture = 1.5
 position = Vector2(1188, 302)
 
 [node name="Marker2D2" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(1306, -17)
+position = Vector2(1117, -17)
 
 [node name="PlayerCamera" parent="." instance=ExtResource("5_65guy")]
 
 [node name="Triggers" type="Node2D" parent="."]
 
 [node name="Trigger1" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(1188, 302)
+position = Vector2(1336, 302)
 collision_layer = 2
 collision_mask = 2
 

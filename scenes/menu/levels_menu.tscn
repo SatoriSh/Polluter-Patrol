@@ -97,7 +97,7 @@ _data = {
 [node name="LevelsMenu" type="Node2D" node_paths=PackedStringArray("_anim")]
 process_mode = 3
 script = ExtResource("1_c5pid")
-_pathToScenes = PackedStringArray("res://scenes/levels/level_0.tscn", "", "", "res://scenes/levels/level_3.tscn", "", "", "", "", "")
+_pathToScenes = PackedStringArray("res://scenes/levels/level_0.tscn", "", "", "", "", "", "", "", "")
 _anim = NodePath("AnimationPlayer")
 
 [node name="Background" type="Sprite2D" parent="."]
