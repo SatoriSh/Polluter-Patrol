@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://d18xp8jrakhe7"]
+[gd_scene load_steps=32 format=4 uid="uid://d18xp8jrakhe7"]
 
 [ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_fkk1g"]
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="2_ugcn1"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="5_n6eey"]
 [ext_resource type="PackedScene" uid="uid://bu44238t4f3y7" path="res://scenes/characters/character_3.tscn" id="6_qi5uv"]
 [ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="7_f6egh"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fkk1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkk1g"]
 texture = ExtResource("2_ugcn1")
@@ -455,6 +457,43 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oc4kc"]
 
+[sub_resource type="Animation" id="Animation_ugcn1"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pimnq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bnyt"]
+_data = {
+&"RESET": SubResource("Animation_pimnq"),
+&"hide": SubResource("Animation_ugcn1")
+}
+
 [node name="Level_3" type="Node2D" node_paths=PackedStringArray("_labelCountToWin")]
 script = ExtResource("1_fkk1g")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
@@ -469,6 +508,12 @@ offset_right = 64.0
 offset_bottom = 25.0
 scale = Vector2(2, 2)
 text = "Count: "
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(915, 596)
+scale = Vector2(3823.5, 2313.33)
+texture = SubResource("CanvasTexture_fkk1g")
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -721,7 +766,7 @@ autoplay = "default"
 frame_progress = 0.179089
 
 [node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("4_2bnyt")]
-position = Vector2(2061, 200)
+position = Vector2(2180, 200)
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2"), NodePath("../PointsForCharacter1/Marker2D3"), NodePath("../PointsForCharacter1/Marker2D4"), NodePath("../PointsForCharacter1/Marker2D5"), NodePath("../PointsForCharacter1/Marker2D6"), NodePath("../PointsForCharacter1/Marker2D7")]
 _timeToTakePicture = 1.5
 
@@ -749,7 +794,7 @@ position = Vector2(456, 56)
 position = Vector2(225, -57)
 
 [node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("5_n6eey")]
-position = Vector2(-47, 292)
+position = Vector2(-358, 292)
 _pathPositions = [NodePath("../PointsForCharacter2/Marker2D"), NodePath("../PointsForCharacter2/Marker2D2"), NodePath("../PointsForCharacter2/Marker2D3"), NodePath("../PointsForCharacter2/Marker2D4"), NodePath("../PointsForCharacter2/Marker2D5")]
 _timeToTakePicture = 1.5
 
@@ -771,7 +816,7 @@ position = Vector2(858, 229)
 position = Vector2(1123, -40)
 
 [node name="Character3" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_qi5uv")]
-position = Vector2(628, -1649)
+position = Vector2(628, -2071)
 _speed = 150.0
 _pathPositions = [NodePath("../PointsForCharacter3/Marker2D"), NodePath("../PointsForCharacter3/Marker2D2"), NodePath("../PointsForCharacter3/Marker2D3"), NodePath("../PointsForCharacter3/Marker2D4")]
 _timeToTakePicture = 0.51
@@ -838,3 +883,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger5"]
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_oc4kc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2bnyt")
+}
+autoplay = "hide"
