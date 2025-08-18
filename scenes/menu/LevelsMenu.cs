@@ -54,6 +54,10 @@ public partial class LevelsMenu : Node2D
     {
         if (!_animPlaying) SetAnimAndCurrentScene(0);
     }
+    private void _on_levelbutton_1_button_down()
+    {
+        if (!_animPlaying) SetAnimAndCurrentScene(1);
+    }
 
     private void _on_levelbutton_3_button_down()
     {

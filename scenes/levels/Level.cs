@@ -23,6 +23,8 @@ public partial class Level : Node2D
 
     [Signal]
     public delegate void WinEventHandler();
+    [Signal]
+    public delegate void LostEventHandler();
 
     private bool _alreadyWinOrLost = false;
 
@@ -33,6 +35,11 @@ public partial class Level : Node2D
         SaveManager.SaveLevel(++_thisLevelNum, false);
 
         _anim.Play("change_to_levels");
+    }
+
+    public void LostEventHandlerEmit()
+    {
+        EmitSignal(SignalName.Lost);
     }
 
     public override void _Ready()
@@ -51,12 +58,15 @@ public partial class Level : Node2D
     {
         if (_alreadyWinOrLost) return;
 
-        foreach (Character ch in _charactersInLevel)
+        if (_charactersInLevel.Count > 0)
         {
-            if (!IsInstanceValid(ch))
+            foreach (Character ch in _charactersInLevel)
             {
-                _charactersInLevel.Remove(ch);
-            }
+                if (!IsInstanceValid(ch))
+                {
+                    _charactersInLevel.Remove(ch);
+                }
+            }   
         }
 
         if (_charactersInLevel.Count < 1)
@@ -82,7 +92,7 @@ public partial class Level : Node2D
     private void GameOver()
     {
         _alreadyWinOrLost = true;
-        
+        LostEventHandlerEmit();
     }
 
     public void ChangeToLevelsScene() => GetTree().ChangeSceneToFile("res://scenes/menu/levels_menu.tscn");

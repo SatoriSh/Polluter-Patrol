@@ -1,31 +1,139 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvs8ysrob61rm"]
+[gd_scene load_steps=11 format=3 uid="uid://dvs8ysrob61rm"]
 
 [ext_resource type="Script" uid="uid://durv720082bds" path="res://scenes/levels/WinOrLost.cs" id="1_75rpg"]
+[ext_resource type="PackedScene" uid="uid://clbklio73adve" path="res://scenes/menu/levels_menu.tscn" id="2_gynk2"]
+[ext_resource type="Texture2D" uid="uid://brmj8rndg0vmp" path="res://sprites/UI/buttons/levels/buttontolevels.png" id="3_mg5yg"]
+[ext_resource type="Texture2D" uid="uid://b0mthh85vxcrt" path="res://sprites/UI/buttons/levels/buttontolevelshover.png" id="4_tjcco"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_gynk2"]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_smd0g"]
+
 [sub_resource type="Animation" id="Animation_smd0g"]
 resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mg5yg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tjcco"]
+resource_name = "change_to_levels"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeToLevels"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mg5yg"]
 _data = {
+&"RESET": SubResource("Animation_mg5yg"),
+&"change_to_levels": SubResource("Animation_tjcco"),
 &"show": SubResource("Animation_smd0g")
 }
 
-[node name="WinOrLost" type="Node2D"]
+[node name="WinOrLost" type="Node2D" node_paths=PackedStringArray("_anim", "_label")]
+modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_75rpg")
+_levelsScene = ExtResource("2_gynk2")
+_anim = NodePath("AnimationPlayer")
+_label = NodePath("Label")
 
-[node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background2" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 0)
 position = Vector2(931, 502)
 scale = Vector2(3996, 3101.44)
 texture = SubResource("CanvasTexture_gynk2")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(971.25, 552.25)
+scale = Vector2(3662.5, 2083.3)
+texture = SubResource("CanvasTexture_smd0g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 329.0
+offset_top = 119.0
+offset_right = 1617.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 85
+text = "You couldn't catch all of them..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_mg5yg")
 }
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="ChangeLevelButton" type="TextureButton" parent="."]
+offset_left = 871.0
+offset_top = 440.0
+offset_right = 911.0
+offset_bottom = 480.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("3_mg5yg")
+texture_pressed = ExtResource("3_mg5yg")
+texture_hover = ExtResource("4_tjcco")
+stretch_mode = 4
+
+[connection signal="button_down" from="ChangeLevelButton" to="." method="_on_change_level_button_button_down"]
