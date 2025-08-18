@@ -15,10 +15,6 @@ run/main_scene="uid://cl45c4g4lvdh3"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-SaveSystem="*res://addons/save_system/save_system.gd"
-
 [display]
 
 window/size/viewport_width=1920
@@ -31,7 +27,7 @@ project/assembly_name="Polluter Patrol"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/project_time_tracker/plugin.cfg", "res://addons/save_system/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/project_time_tracker/plugin.cfg")
 
 [global_group]
 

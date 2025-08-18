@@ -21,6 +21,9 @@ public partial class LevelsMenu : Node2D
         Input.MouseMode = Input.MouseModeEnum.Visible;
         GetTree().Paused = false;
 
+        var saveSystemNode = GetNode("/root/SaveSystem");
+        saveSystemNode.Call("set_int",);
+
         _menuScene = GD.Load<PackedScene>("res://scenes/menu/menu.tscn");
 
         for (int i = 0; i < _scenes.Length; i++)
