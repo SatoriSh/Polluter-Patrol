@@ -533,7 +533,7 @@ _data = {
 script = ExtResource("1_xy1qu")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
 _maxPhotographedCharactersCount = 1
-_charactersInLevelArray = [NodePath("Character2"), NodePath("Character2")]
+_charactersInLevelArray = [NodePath("Character2")]
 _anim = NodePath("AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

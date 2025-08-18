@@ -32,9 +32,9 @@ public partial class Level : Node2D
     {
         EmitSignal(SignalName.Win);
 
-        SaveManager.SaveLevel(++_thisLevelNum, false);
+        SaveManager.SaveLevel(_thisLevelNum + 1, false);
 
-        _anim.Play("change_to_levels");
+        if (_thisLevelNum == 0) _anim.Play("change_to_levels");
     }
 
     public void LostEventHandlerEmit()

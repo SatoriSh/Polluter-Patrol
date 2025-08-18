@@ -7,6 +7,7 @@ public partial class WinOrLost : Node2D
     private Node2D _pauseNode;
 
     [Export]
+    private string _pathToLevelsScene;
     private PackedScene _levelsScene;
 
     [Export]
@@ -19,6 +20,8 @@ public partial class WinOrLost : Node2D
 
     public override void _Ready()
     {
+        _levelsScene = GD.Load<PackedScene>(_pathToLevelsScene);
+
         _level.Win += OnWin;
         _level.Lost += OnLost;
     }
@@ -43,6 +46,7 @@ public partial class WinOrLost : Node2D
 
     private void _on_change_level_button_button_down()
     {
+        GD.Print("ЗАПУСК change_to_levels");
         _anim.Play("change_to_levels");
     }
 

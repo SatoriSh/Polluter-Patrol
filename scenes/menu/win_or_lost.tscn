@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvs8ysrob61rm"]
+[gd_scene load_steps=10 format=3 uid="uid://dvs8ysrob61rm"]
 
 [ext_resource type="Script" uid="uid://durv720082bds" path="res://scenes/levels/WinOrLost.cs" id="1_75rpg"]
-[ext_resource type="PackedScene" uid="uid://clbklio73adve" path="res://scenes/menu/levels_menu.tscn" id="2_gynk2"]
 [ext_resource type="Texture2D" uid="uid://brmj8rndg0vmp" path="res://sprites/UI/buttons/levels/buttontolevels.png" id="3_mg5yg"]
 [ext_resource type="Texture2D" uid="uid://b0mthh85vxcrt" path="res://sprites/UI/buttons/levels/buttontolevelshover.png" id="4_tjcco"]
 
@@ -92,7 +91,7 @@ _data = {
 [node name="WinOrLost" type="Node2D" node_paths=PackedStringArray("_anim", "_label")]
 modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_75rpg")
-_levelsScene = ExtResource("2_gynk2")
+_pathToLevelsScene = "res://scenes/menu/levels_menu.tscn"
 _anim = NodePath("AnimationPlayer")
 _label = NodePath("Label")
 
