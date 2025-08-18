@@ -810,7 +810,7 @@ autoplay = "default"
 frame_progress = 0.179089
 
 [node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_s8va5")]
-position = Vector2(-51, 351)
+position = Vector2(-204, 351)
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2")]
 _timeToTakePicture = 1.5
 
@@ -823,6 +823,7 @@ position = Vector2(469, 308)
 position = Vector2(838, -46)
 
 [node name="Character4" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("7_dga24")]
+position = Vector2(0, -399)
 _speed = 115.0
 _pathPositions = [NodePath("../PointsForCharacter4/Marker2D"), NodePath("../PointsForCharacter4/Marker2D2")]
 _timeToTakePicture = 1.15
