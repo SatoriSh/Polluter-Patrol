@@ -1,12 +1,11 @@
-[gd_scene load_steps=34 format=4 uid="uid://djyk8lybhvk44"]
+[gd_scene load_steps=33 format=4 uid="uid://djyk8lybhvk44"]
 
 [ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_8qukl"]
 [ext_resource type="PackedScene" uid="uid://dvs8ysrob61rm" path="res://scenes/menu/win_or_lost.tscn" id="2_3p04p"]
 [ext_resource type="PackedScene" uid="uid://r46nf8norvus" path="res://scenes/menu/pause.tscn" id="3_qsp8v"]
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="4_nt80m"]
 [ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="5_brxtv"]
-[ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="6_tv7cl"]
-[ext_resource type="PackedScene" uid="uid://blkoyir8apbwt" path="res://scenes/characters/character_4.tscn" id="7_r88tb"]
+[ext_resource type="PackedScene" uid="uid://bu44238t4f3y7" path="res://scenes/characters/character_3.tscn" id="6_ibugp"]
 [ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="8_1yj8c"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fkk1g"]
@@ -532,7 +531,7 @@ script = ExtResource("1_8qukl")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
 _thisLevelNum = 2
 _maxPhotographedCharactersCount = 1
-_charactersInLevelArray = []
+_charactersInLevelArray = [NodePath("Character3")]
 _anim = NodePath("AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -809,54 +808,28 @@ sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
 
-[node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_tv7cl")]
-position = Vector2(-204, 351)
-_pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2")]
-_timeToTakePicture = 1.5
+[node name="Character3" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_ibugp")]
+position = Vector2(-652, 276)
+_speed = 265.0
+_pathPositions = [NodePath("../PointsForCharacter3/Marker2D")]
+_timeToTakePicture = 0.5
 
-[node name="PointsForCharacter1" type="Node2D" parent="."]
+[node name="PointsForCharacter3" type="Node2D" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(469, 308)
-
-[node name="Marker2D2" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(838, -46)
-
-[node name="Character4" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("7_r88tb")]
-position = Vector2(0, -399)
-_speed = 115.0
-_pathPositions = [NodePath("../PointsForCharacter4/Marker2D"), NodePath("../PointsForCharacter4/Marker2D2")]
-_timeToTakePicture = 1.15
-
-[node name="PointsForCharacter4" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="PointsForCharacter4"]
-position = Vector2(1292, 350)
-
-[node name="Marker2D2" type="Marker2D" parent="PointsForCharacter4"]
-position = Vector2(646, 612)
+[node name="Marker2D" type="Marker2D" parent="PointsForCharacter3"]
+position = Vector2(1949, 299)
 
 [node name="PlayerCamera" parent="." instance=ExtResource("8_1yj8c")]
 
 [node name="Triggers" type="Node2D" parent="."]
 
 [node name="Trigger1" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(967, 469)
+position = Vector2(1514, 323)
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger1"]
-scale = Vector2(2.5, 2.5)
-shape = SubResource("CircleShape2D_oc4kc")
-
-[node name="Trigger2" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(635, 147)
-scale = Vector2(1.5, 1.5)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger2"]
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_oc4kc")
 

@@ -58,10 +58,37 @@ public partial class LevelsMenu : Node2D
     {
         if (!_animPlaying) SetAnimAndCurrentScene(1);
     }
-
+    private void _on_levelbutton_2_button_down()
+    {
+         if (!_animPlaying) SetAnimAndCurrentScene(2);
+    }
     private void _on_levelbutton_3_button_down()
     {
         if (!_animPlaying) SetAnimAndCurrentScene(3);
+    }
+    private void _on_levelbutton_4_button_down()
+    {
+         if (!_animPlaying) SetAnimAndCurrentScene(4);
+    }
+    private void _on_levelbutton_5_button_down()
+    {
+         if (!_animPlaying) SetAnimAndCurrentScene(5);
+    }
+    private void _on_levelbutton_6_button_down()
+    {
+         if (!_animPlaying) SetAnimAndCurrentScene(6);
+    }
+    private void _on_levelbutton_7_button_down()
+    {
+         if (!_animPlaying) SetAnimAndCurrentScene(7);
+    }
+    private void _on_levelbutton_8_button_down()
+    {
+         if (!_animPlaying) SetAnimAndCurrentScene(8);
+    }
+    private void _on_levelbutton_9_button_down()
+    {
+         if (!_animPlaying) SetAnimAndCurrentScene(9);
     }
 
     private void SetAnimAndCurrentScene(int sceneIndex)

@@ -52,7 +52,6 @@ public partial class WinOrLost : Node2D
 
     private void _on_change_level_button_button_down()
     {
-        GD.Print("ЗАПУСК change_to_levels");
         _anim.Play("change_to_levels");
     }
 

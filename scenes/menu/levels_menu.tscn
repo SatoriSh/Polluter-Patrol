@@ -98,7 +98,7 @@ _data = {
 [node name="LevelsMenu" type="Node2D" node_paths=PackedStringArray("_anim", "_levelsButtons")]
 process_mode = 3
 script = ExtResource("1_c5pid")
-_pathToScenes = PackedStringArray("res://scenes/levels/level_0.tscn", "res://scenes/levels/level_1.tscn", "", "", "", "", "", "", "")
+_pathToScenes = PackedStringArray("res://scenes/levels/level_0.tscn", "res://scenes/levels/level_1.tscn", "res://scenes/levels/level_2.tscn", "", "", "", "", "", "")
 _anim = NodePath("AnimationPlayer")
 _levelsButtons = [NodePath("LevelsButtons/levelbutton0"), NodePath("LevelsButtons/levelbutton1"), NodePath("LevelsButtons/levelbutton2"), NodePath("LevelsButtons/levelbutton3"), NodePath("LevelsButtons/levelbutton4"), NodePath("LevelsButtons/levelbutton5"), NodePath("LevelsButtons/levelbutton6"), NodePath("LevelsButtons/levelbutton7"), NodePath("LevelsButtons/levelbutton8"), NodePath("LevelsButtons/levelbutton9")]
 
@@ -247,4 +247,11 @@ autoplay = "hide"
 [connection signal="button_down" from="ButtonToMenu" to="." method="_on_button_to_menu_button_down"]
 [connection signal="button_down" from="LevelsButtons/levelbutton0" to="." method="_on_levelbutton_0_button_down"]
 [connection signal="button_down" from="LevelsButtons/levelbutton1" to="." method="_on_levelbutton_1_button_down"]
+[connection signal="button_down" from="LevelsButtons/levelbutton2" to="." method="_on_levelbutton_2_button_down"]
 [connection signal="button_down" from="LevelsButtons/levelbutton3" to="." method="_on_levelbutton_3_button_down"]
+[connection signal="button_down" from="LevelsButtons/levelbutton4" to="." method="_on_levelbutton_4_button_down"]
+[connection signal="button_down" from="LevelsButtons/levelbutton5" to="." method="_on_levelbutton_5_button_down"]
+[connection signal="button_down" from="LevelsButtons/levelbutton6" to="." method="_on_levelbutton_6_button_down"]
+[connection signal="button_down" from="LevelsButtons/levelbutton7" to="." method="_on_levelbutton_7_button_down"]
+[connection signal="button_down" from="LevelsButtons/levelbutton8" to="." method="_on_levelbutton_8_button_down"]
+[connection signal="button_down" from="LevelsButtons/levelbutton9" to="." method="_on_levelbutton_9_button_down"]
