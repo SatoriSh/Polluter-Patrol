@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvs8ysrob61rm"]
+
+[ext_resource type="Script" uid="uid://durv720082bds" path="res://scenes/levels/WinOrLost.cs" id="1_75rpg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gynk2"]
+
+[sub_resource type="Animation" id="Animation_smd0g"]
+resource_name = "show"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mg5yg"]
+_data = {
+&"show": SubResource("Animation_smd0g")
+}
+
+[node name="WinOrLost" type="Node2D"]
+script = ExtResource("1_75rpg")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(931, 502)
+scale = Vector2(3996, 3101.44)
+texture = SubResource("CanvasTexture_gynk2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mg5yg")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
