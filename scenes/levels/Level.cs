@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Level : Node2D
 {
@@ -13,13 +14,17 @@ public partial class Level : Node2D
     [Export]
     private int _maxPhotographedCharactersCount;
 
+    [Export]
+    private CharacterBody2D[] _charactersInLevelArray;
+    private List<Character> _charactersInLevel = new List<Character>();
+
+    [Export]
+    private AnimationPlayer _anim;
+
     [Signal]
     public delegate void WinEventHandler();
 
     private bool _alreadyWinOrLost = false;
-
-    [Export]
-    private AnimationPlayer _anim;
 
     public void WinEventHandlerEmit()
     {
@@ -35,6 +40,29 @@ public partial class Level : Node2D
         Input.MouseMode = Input.MouseModeEnum.Hidden;
 
         _labelCountToWin.Text = $"Caught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
+
+        foreach (CharacterBody2D ch in _charactersInLevelArray)
+        {
+            if (ch is Character character) _charactersInLevel.Add(character);
+        }
+    }
+
+    public override void _Process(double delta)
+    {
+        if (_alreadyWinOrLost) return;
+
+        foreach (Character ch in _charactersInLevel)
+        {
+            if (!IsInstanceValid(ch))
+            {
+                _charactersInLevel.Remove(ch);
+            }
+        }
+
+        if (_charactersInLevel.Count < 1)
+        {
+            GameOver();
+        }
     }
 
     public void UpdateLabelCountToWinText()
@@ -49,6 +77,12 @@ public partial class Level : Node2D
             WinEventHandlerEmit();
             _alreadyWinOrLost = true;
         }
+    }
+
+    private void GameOver()
+    {
+        _alreadyWinOrLost = true;
+        
     }
 
     public void ChangeToLevelsScene() => GetTree().ChangeSceneToFile("res://scenes/menu/levels_menu.tscn");
