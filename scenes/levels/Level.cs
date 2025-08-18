@@ -27,6 +27,8 @@ public partial class Level : Node2D
 
     public override void _Ready()
     {
+        Input.MouseMode = Input.MouseModeEnum.Hidden;
+        
         _labelCountToWin.Text = $"Caught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
     }
 

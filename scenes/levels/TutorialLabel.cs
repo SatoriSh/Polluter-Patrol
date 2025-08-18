@@ -19,6 +19,8 @@ public partial class TutorialLabel : Label
 
 	public override void _Ready()
 	{
+		this.Text = "";
+
 		_timer.WaitTime = 0.035f;
 		_timer.Timeout += OnTimerTimeOut;
 		_timer.Autostart = true;

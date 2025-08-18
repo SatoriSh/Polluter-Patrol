@@ -43,7 +43,9 @@ public partial class Pause : Node2D
         _animFinished = false;
         _worldInPause = !_worldInPause;
         GetTree().Paused = _worldInPause;
+
         _anim.Play(_worldInPause ? "show" : "hide");
+        Input.MouseMode = _worldInPause ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Hidden;
 
         _canOpenPauseMenu = false;
         timer.Start();

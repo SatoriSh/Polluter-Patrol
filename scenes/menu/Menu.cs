@@ -12,8 +12,9 @@ public partial class Menu : Node2D
 
     public override void _Ready()
     {
+        Input.MouseMode = Input.MouseModeEnum.Visible;
         GetTree().Paused = false;
-        
+
         _levelsScene = GD.Load<PackedScene>("res://scenes/menu/levels_menu.tscn");
     }
 

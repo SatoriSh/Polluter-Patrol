@@ -1,12 +1,15 @@
-[gd_scene load_steps=33 format=4 uid="uid://cv8h4a0ah715y"]
+[gd_scene load_steps=35 format=4 uid="uid://cv8h4a0ah715y"]
 
 [ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_xy1qu"]
 [ext_resource type="PackedScene" uid="uid://r46nf8norvus" path="res://scenes/menu/pause.tscn" id="2_3mnpy"]
 [ext_resource type="Script" uid="uid://dqa7hxjaajwuq" path="res://scenes/levels/TutorialLabel.cs" id="2_6ayib"]
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="2_jjvta"]
 [ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="3_3mnpy"]
+[ext_resource type="Texture2D" uid="uid://b2hqx2j1mdok" path="res://sprites/UI/camera/Godot_v4.4.1-stable_mono_win64_ptsz86K1rZ.png" id="3_6ayib"]
 [ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="4_xy1qu"]
 [ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="5_65guy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_65guy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fkk1g"]
 
@@ -473,22 +476,6 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_ugcn1"]
-resource_name = "hide"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Background:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_3mnpy"]
 resource_name = "change_to_levels"
 length = 2.5
@@ -517,6 +504,22 @@ tracks/1/keys = {
 "args": [],
 "method": &"ChangeToLevelsScene"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_ugcn1"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2bnyt"]
@@ -557,6 +560,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_6ayib")
 _level = NodePath("../..")
+
+[node name="ExampleSpriteBorder" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(984, 63.5)
+scale = Vector2(166, 108.215)
+texture = SubResource("CanvasTexture_65guy")
+
+[node name="Expample" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(984, 63)
+texture = ExtResource("3_6ayib")
 
 [node name="Background" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)

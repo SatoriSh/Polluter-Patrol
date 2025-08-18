@@ -18,6 +18,7 @@ public partial class LevelsMenu : Node2D
 
     public override void _Ready()
     {
+        Input.MouseMode = Input.MouseModeEnum.Visible;
         GetTree().Paused = false;
 
         _menuScene = GD.Load<PackedScene>("res://scenes/menu/menu.tscn");
@@ -45,7 +46,7 @@ public partial class LevelsMenu : Node2D
     {
         if (!_animPlaying) SetAnimAndCurrentScene(0);
     }
-    
+
     private void _on_levelbutton_3_button_down()
     {
         if (!_animPlaying) SetAnimAndCurrentScene(3);
