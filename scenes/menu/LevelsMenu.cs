@@ -16,15 +16,20 @@ public partial class LevelsMenu : Node2D
 
     private PackedScene _currentChoiceScene;
 
+    [Export]
+    private TextureButton[] _levelsButtons;
+
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Visible;
         GetTree().Paused = false;
 
-        var saveSystemNode = GetNode("/root/SaveSystem");
-        saveSystemNode.Call("set_int",);
-
         _menuScene = GD.Load<PackedScene>("res://scenes/menu/menu.tscn");
+
+        for (int i = 0; i < _levelsButtons.Length; i++)
+        {
+            _levelsButtons[i].Disabled = SaveManager.LoadMaxLevel() >= i ? false : true;
+        }
 
         for (int i = 0; i < _scenes.Length; i++)
         {

@@ -95,11 +95,12 @@ _data = {
 &"hide": SubResource("Animation_jwb7q")
 }
 
-[node name="LevelsMenu" type="Node2D" node_paths=PackedStringArray("_anim")]
+[node name="LevelsMenu" type="Node2D" node_paths=PackedStringArray("_anim", "_levelsButtons")]
 process_mode = 3
 script = ExtResource("1_c5pid")
 _pathToScenes = PackedStringArray("res://scenes/levels/level_0.tscn", "", "", "", "", "", "", "", "")
 _anim = NodePath("AnimationPlayer")
+_levelsButtons = [NodePath("LevelsButtons/levelbutton0"), NodePath("LevelsButtons/levelbutton1"), NodePath("LevelsButtons/levelbutton2"), NodePath("LevelsButtons/levelbutton3"), NodePath("LevelsButtons/levelbutton4"), NodePath("LevelsButtons/levelbutton5"), NodePath("LevelsButtons/levelbutton6"), NodePath("LevelsButtons/levelbutton7"), NodePath("LevelsButtons/levelbutton8"), NodePath("LevelsButtons/levelbutton9")]
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0.352941, 1)

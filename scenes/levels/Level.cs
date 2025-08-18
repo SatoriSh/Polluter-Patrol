@@ -5,6 +5,8 @@ public partial class Level : Node2D
 {
     [Export]
     private Label _labelCountToWin;
+    [Export]
+    private int _thisLevelNum;
 
     private int _photographedCharactersCount = 0;
 
@@ -22,13 +24,16 @@ public partial class Level : Node2D
     public void WinEventHandlerEmit()
     {
         EmitSignal(SignalName.Win);
+
+        SaveManager.SaveLevel(++_thisLevelNum);
+
         _anim.Play("change_to_levels");
     }
 
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Hidden;
-        
+
         _labelCountToWin.Text = $"Caught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
     }
 
