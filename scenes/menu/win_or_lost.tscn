@@ -88,12 +88,13 @@ _data = {
 &"show": SubResource("Animation_smd0g")
 }
 
-[node name="WinOrLost" type="Node2D" node_paths=PackedStringArray("_anim", "_label")]
+[node name="WinOrLost" type="Node2D" node_paths=PackedStringArray("_anim", "_label", "_button")]
 modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_75rpg")
 _pathToLevelsScene = "res://scenes/menu/levels_menu.tscn"
 _anim = NodePath("AnimationPlayer")
 _label = NodePath("Label")
+_button = NodePath("ChangeLevelButton")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

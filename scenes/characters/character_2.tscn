@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c0coql15xoe7n"]
+[gd_scene load_steps=25 format=3 uid="uid://c0coql15xoe7n"]
 
 [ext_resource type="Script" uid="uid://cod0uso2002o" path="res://scenes/characters/Character.cs" id="1_hdhcm"]
 [ext_resource type="PackedScene" uid="uid://bwslwob0y7367" path="res://scenes/garbage/garbage.tscn" id="2_t6jdb"]
@@ -143,13 +143,65 @@ animations = [{
 radius = 7.0
 height = 20.0
 
-[node name="Character2" type="CharacterBody2D" node_paths=PackedStringArray("_pathPositions", "_anim")]
+[sub_resource type="Animation" id="Animation_ijfti"]
+resource_name = "disappear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"CharacterQueueFree"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_s8j55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4cjd7"]
+_data = {
+&"RESET": SubResource("Animation_s8j55"),
+&"disappear": SubResource("Animation_ijfti")
+}
+
+[node name="Character2" type="CharacterBody2D" node_paths=PackedStringArray("_pathPositions", "_anim", "_animPlayer")]
 scale = Vector2(2, 2)
 collision_mask = 2
 script = ExtResource("1_hdhcm")
 _pathPositions = []
 _anim = NodePath("AnimatedSprite2D")
 _garbageScene = ExtResource("2_t6jdb")
+_animPlayer = NodePath("AnimationPlayer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
@@ -164,5 +216,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_6uusn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4cjd7")
+}
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

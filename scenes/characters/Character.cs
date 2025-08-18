@@ -28,6 +28,9 @@ public partial class Character : CharacterBody2D
     [Export]
     private float _timeToTakePicture;
 
+    [Export]
+    private AnimationPlayer _animPlayer;
+
     public override void _Ready()
     {
         _timerToTakePicture.Autostart = false;
@@ -59,7 +62,7 @@ public partial class Character : CharacterBody2D
             }
             else if (_pathPositionIndex == _pathPositions.Length - 1 && PlayerIsOnPosition())
             {
-                this.QueueFree();
+                _animPlayer.Play("disappear");
             }
         }
     }
@@ -100,4 +103,6 @@ public partial class Character : CharacterBody2D
         else
             _anim.Play(_direction.Y > 0 ? "move_down" : "move_up");
     }
+
+    public void CharacterQueueFree() => this.QueueFree();
 }
