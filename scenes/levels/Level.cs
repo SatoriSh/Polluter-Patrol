@@ -25,7 +25,7 @@ public partial class Level : Node2D
     {
         EmitSignal(SignalName.Win);
 
-        SaveManager.SaveLevel(++_thisLevelNum);
+        SaveManager.SaveLevel(++_thisLevelNum, false);
 
         _anim.Play("change_to_levels");
     }

@@ -10,12 +10,27 @@ public partial class SaveManager : Node
         Instance = this;
     }
 
-    public static void SaveLevel(int levelNum)
+    public override void _Process(double delta)
     {
-        GD.Print("там было " + LoadMaxLevel());
-        if (LoadMaxLevel() < levelNum)
+        if (Input.IsActionJustPressed("ResetSave"))
         {
-            using var file = Godot.FileAccess.Open("user://max_level.save", Godot.FileAccess.ModeFlags.Write); // перезаписываем нахуй весь файл
+            ResetSave();
+        }
+    }
+
+    public static void SaveLevel(int levelNum, bool force)
+    {
+        if (!force)
+        {
+            if (LoadMaxLevel() < levelNum)
+            {
+                using var file = Godot.FileAccess.Open("user://max_level.save", Godot.FileAccess.ModeFlags.Write); // перезаписываем нахуй весь файл
+                file.StoreLine(levelNum.ToString());
+            }
+        }
+        else
+        {
+            using var file = Godot.FileAccess.Open("user://max_level.save", Godot.FileAccess.ModeFlags.Write); // перезаписываем нахуй весь файл принудительно
             file.StoreLine(levelNum.ToString());
         }
     }
@@ -34,4 +49,6 @@ public partial class SaveManager : Node
 
         return 0;
     }
+
+    private void ResetSave() => SaveLevel(0, true);
 }
