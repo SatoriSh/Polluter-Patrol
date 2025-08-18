@@ -116,6 +116,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"SetButtonsDisabledStatus"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_4wejy"]
 resource_name = "show"
@@ -132,6 +146,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"SetButtonsDisabledStatus"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1mso8"]
 _data = {
@@ -142,13 +170,14 @@ _data = {
 &"show": SubResource("Animation_4wejy")
 }
 
-[node name="Pause" type="Node2D" node_paths=PackedStringArray("_anim")]
+[node name="Pause" type="Node2D" node_paths=PackedStringArray("_anim", "buttons")]
 process_mode = 3
 modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_4wejy")
 _anim = NodePath("AnimationPlayer")
 _menuScene = ExtResource("2_yl1uf")
 _levelsScene = ExtResource("3_d33x0")
+buttons = [NodePath("ButtonToMenu"), NodePath("ButtonPauseOff"), NodePath("ChangeLevelButton")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

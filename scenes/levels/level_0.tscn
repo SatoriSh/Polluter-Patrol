@@ -579,7 +579,8 @@ position = Vector2(915, 596)
 scale = Vector2(3823.5, 2313.33)
 texture = SubResource("CanvasTexture_fkk1g")
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("2_3mnpy")]
+[node name="Pause" parent="CanvasLayer" node_paths=PackedStringArray("buttons") instance=ExtResource("2_3mnpy")]
+buttons = []
 
 [node name="Ground" type="Node2D" parent="."]
 

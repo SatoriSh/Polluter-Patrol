@@ -13,6 +13,9 @@ public partial class Pause : Node2D
     [Export]
     private PackedScene _levelsScene;
 
+    [Export]
+    private TextureButton[] buttons;
+
     private bool _animFinished = true;
 
     private bool _animPlaying = false;
@@ -27,6 +30,8 @@ public partial class Pause : Node2D
         timer.WaitTime = 0.5f;
         timer.Timeout += _on_timer_timeout;
         AddChild(timer);
+
+        SetButtonsDisabledStatus(true);
     }
 
     public override void _Process(double delta)
@@ -75,6 +80,15 @@ public partial class Pause : Node2D
             _animPlaying = true;
         }
     }
+
+    public void SetButtonsDisabledStatus(bool status)
+    {
+        foreach (TextureButton button in buttons)
+        {
+            button.Disabled = status;
+        }
+    }
+
     public void ChangeSceneToMenu() => GetTree().ChangeSceneToPacked(_menuScene);
     public void ChangeSceneToLevels() => GetTree().ChangeSceneToPacked(_levelsScene);
 
