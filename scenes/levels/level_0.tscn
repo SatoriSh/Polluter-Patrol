@@ -564,12 +564,13 @@ _level = NodePath("../..")
 
 [node name="ExampleSpriteBorder" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(984, 63.5)
-scale = Vector2(166, 108.215)
+position = Vector2(957, 113.5)
+scale = Vector2(282, 189)
 texture = SubResource("CanvasTexture_65guy")
 
-[node name="Expample" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(984, 63)
+[node name="ExpampleSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(957, 113)
+scale = Vector2(1.68932, 1.68932)
 texture = ExtResource("3_6ayib")
 
 [node name="Background" type="Sprite2D" parent="CanvasLayer"]
