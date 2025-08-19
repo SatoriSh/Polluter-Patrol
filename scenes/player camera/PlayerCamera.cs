@@ -9,7 +9,17 @@ public partial class PlayerCamera : Node2D
 
     private List<Character> _charactersInZoom = new List<Character>();
     private List<Garbage> _garbageInZoom = new List<Garbage>();
-    
+
+    [Export]
+    private bool _darkness = false;
+    [Export]
+    private PointLight2D _light;
+
+    public override void _Ready()
+    {
+        _light.Visible = _darkness;
+    }
+
     public override void _Process(double delta)
     {
         if (GetTree().Paused) return;
@@ -18,7 +28,8 @@ public partial class PlayerCamera : Node2D
 
         if (Input.IsActionJustPressed("take_picture"))
         {
-            _anim.Play("flash");
+            if (!_darkness) _anim.Play("flash");
+            else _anim.Play("flash_darkness");
             CheckCharactersInZoom();
         }
     }

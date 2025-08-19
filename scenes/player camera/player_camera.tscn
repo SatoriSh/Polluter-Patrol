@@ -1,12 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmc3tt4vi5qpu"]
+[gd_scene load_steps=11 format=3 uid="uid://dmc3tt4vi5qpu"]
 
 [ext_resource type="Script" uid="uid://bhpx6yjfakrwu" path="res://scenes/player camera/PlayerCamera.cs" id="1_6vm8v"]
 [ext_resource type="Texture2D" uid="uid://dbtikkhm232am" path="res://sprites/UI/camera/camera_border.png" id="2_nivh7"]
+[ext_resource type="Texture2D" uid="uid://d0an5m2bh16ej" path="res://sprites/light texture/Godot_v4.4.1-stable_mono_win64_4r6Jl3kqoK.png" id="3_yvgv8"]
+[ext_resource type="Texture2D" uid="uid://dk2b5vyisv01m" path="res://sprites/light texture/64x64 textures (99).png" id="4_dma8w"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nivh7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vm8v"]
+size = Vector2(98, 64)
+
 [sub_resource type="Animation" id="Animation_yvgv8"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraFlashLightSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraFlashSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ox4e1"]
 resource_name = "flash"
@@ -15,7 +44,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("CameraFlashSprite:modulate")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.133333, 0.3),
@@ -24,20 +53,35 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_dma8w"]
+resource_name = "flash_darkness"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraFlashLightSprite:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dma8w"]
 _data = {
 &"RESET": SubResource("Animation_yvgv8"),
-&"flash": SubResource("Animation_ox4e1")
+&"flash": SubResource("Animation_ox4e1"),
+&"flash_darkness": SubResource("Animation_dma8w")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vm8v"]
-size = Vector2(98, 64)
-
-[node name="PlayerCamera" type="Node2D" node_paths=PackedStringArray("_anim")]
+[node name="PlayerCamera" type="Node2D" node_paths=PackedStringArray("_anim", "_light")]
 modulate = Color(1, 1, 1, 0.752941)
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_6vm8v")
 _anim = NodePath("AnimationPlayer")
+_light = NodePath("PointLight2D")
 
 [node name="CameraBorder" type="NinePatchRect" parent="."]
 offset_left = -50.0
@@ -52,14 +96,13 @@ patch_margin_bottom = 10
 
 [node name="CameraFlashSprite" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(563, 267)
 scale = Vector2(17272, 8158.4)
 texture = SubResource("CanvasTexture_nivh7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_dma8w")
-}
+[node name="CameraFlashLightSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(3.44157, 3.67281)
+texture = ExtResource("3_yvgv8")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -67,6 +110,15 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_6vm8v")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(8.50961, 8.50961)
+texture = ExtResource("4_dma8w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dma8w")
+}
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
