@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvs8ysrob61rm"]
+[gd_scene load_steps=15 format=3 uid="uid://dvs8ysrob61rm"]
 
 [ext_resource type="Script" uid="uid://durv720082bds" path="res://scenes/levels/WinOrLost.cs" id="1_75rpg"]
 [ext_resource type="Texture2D" uid="uid://brmj8rndg0vmp" path="res://sprites/UI/buttons/levels/buttontolevels.png" id="3_mg5yg"]
+[ext_resource type="Texture2D" uid="uid://bkxbusnwmbyw0" path="res://sprites/UI/buttons/levels/restartButton.png" id="4_grw2i"]
 [ext_resource type="Texture2D" uid="uid://b0mthh85vxcrt" path="res://sprites/UI/buttons/levels/buttontolevelshover.png" id="4_tjcco"]
+[ext_resource type="Texture2D" uid="uid://umd53n8endx" path="res://sprites/UI/buttons/levels/restartButtonHover.png" id="5_tds13"]
+[ext_resource type="Texture2D" uid="uid://cwubklq8qwj7b" path="res://sprites/UI/buttons/buttonpauseoff.png" id="6_4w1id"]
+[ext_resource type="Texture2D" uid="uid://clfa1vcpl0y42" path="res://sprites/UI/buttons/buttonpauseoffhover.png" id="7_j3n6r"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_gynk2"]
 
@@ -35,36 +39,6 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_tjcco"]
-resource_name = "change_to_levels"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"ChangeToLevels"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_smd0g"]
 resource_name = "show"
 length = 0.5
@@ -95,20 +69,81 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_tjcco"]
+resource_name = "change_to_levels"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeToLevels"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vnsgs"]
+resource_name = "change_scene"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeScene"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mg5yg"]
 _data = {
 &"RESET": SubResource("Animation_mg5yg"),
+&"change_scene": SubResource("Animation_vnsgs"),
 &"change_to_levels": SubResource("Animation_tjcco"),
 &"show": SubResource("Animation_smd0g")
 }
 
-[node name="WinOrLost" type="Node2D" node_paths=PackedStringArray("_anim", "_label", "_button")]
+[node name="WinOrLost" type="Node2D" node_paths=PackedStringArray("_anim", "_label", "_buttons")]
 modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_75rpg")
 _pathToLevelsScene = "res://scenes/menu/levels_menu.tscn"
 _anim = NodePath("AnimationPlayer")
 _label = NodePath("Label")
-_button = NodePath("ChangeLevelButton")
+_buttons = [NodePath("ChangeLevelButton"), NodePath("RestartButton"), NodePath("NextLevelButton")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -146,9 +181,35 @@ texture_pressed = ExtResource("3_mg5yg")
 texture_hover = ExtResource("4_tjcco")
 stretch_mode = 4
 
+[node name="RestartButton" type="TextureButton" parent="."]
+offset_left = 625.0
+offset_top = 440.0
+offset_right = 665.0
+offset_bottom = 480.0
+scale = Vector2(4.5, 4.5)
+focus_mode = 0
+texture_normal = ExtResource("4_grw2i")
+texture_pressed = ExtResource("4_grw2i")
+texture_hover = ExtResource("5_tds13")
+stretch_mode = 4
+
+[node name="NextLevelButton" type="TextureButton" parent="."]
+offset_left = 1116.0
+offset_top = 440.0
+offset_right = 1156.0
+offset_bottom = 480.0
+scale = Vector2(4.5, 4.5)
+focus_mode = 0
+texture_normal = ExtResource("6_4w1id")
+texture_pressed = ExtResource("6_4w1id")
+texture_hover = ExtResource("7_j3n6r")
+stretch_mode = 4
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_mg5yg")
 }
 
 [connection signal="button_down" from="ChangeLevelButton" to="." method="_on_change_level_button_button_down"]
+[connection signal="button_down" from="RestartButton" to="." method="OnRestartButtonDown"]
+[connection signal="button_down" from="NextLevelButton" to="." method="OnNextLevelButtonDown"]

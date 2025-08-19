@@ -7,7 +7,7 @@ public partial class Level : Node2D
     [Export]
     private Label _labelCountToWin;
     [Export]
-    private int _thisLevelNum;
+    public int ThisLevelNum;
 
     private int _photographedCharactersCount = 0;
 
@@ -32,9 +32,9 @@ public partial class Level : Node2D
     {
         EmitSignal(SignalName.Win);
 
-        SaveManager.SaveLevel(_thisLevelNum + 1, false);
+        SaveManager.SaveLevel(ThisLevelNum + 1, false);
 
-        if (_thisLevelNum == 0) _anim.Play("change_to_levels");
+        if (ThisLevelNum == 0) _anim.Play("change_to_levels");
     }
 
     public void LostEventHandlerEmit()

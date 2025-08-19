@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 public partial class WinOrLost : Node2D
 {
@@ -21,10 +23,26 @@ public partial class WinOrLost : Node2D
     [Export]
     private Level _level;
 
-    [Export]
-    private TextureButton _button;
-
     private PlayerCamera _camera;
+
+    [Export]
+    private TextureButton[] _buttons; // 0 - levels menu, 1 - restart level, 2 - next level
+
+    private Dictionary<int, string> _levelsPaths = new()
+    {
+        {0, "res://scenes/levels/level_0.tscn"},
+        {1, "res://scenes/levels/level_1.tscn"},
+        {2, "res://scenes/levels/level_2.tscn"},
+        {3, "res://scenes/levels/level_3.tscn"},
+        {4, "res://scenes/levels/level_4.tscn"},
+        {5, "res://scenes/levels/level_5.tscn"},
+        {6, "res://scenes/levels/level_6.tscn"},
+        {7, "res://scenes/levels/level_7.tscn"},
+        {8, ""},
+        {9, ""},
+    };
+
+    private int _levelToChange;
 
     public override void _Ready()
     {
@@ -39,18 +57,29 @@ public partial class WinOrLost : Node2D
 
         _level.Lost += OnLost;
 
-        SetButtonDisabledStatus(true);
+        foreach (var button in _buttons)
+        {
+            button.Disabled = true;
+        }
     }
 
     private void OnWin()
     {
         _label.Text = "Good job! You've got everyone!";
         ShowScene();
+
+        if (_level.ThisLevelNum < 9) _buttons[2].Disabled = false;
+        _buttons[0].Disabled = false;
+        _buttons[1].Disabled = false;
     }
     private void OnLost()
     {
         _label.Text = "You couldn't catch all of them...";
         ShowScene();
+
+        _buttons[0].Disabled = false;
+        _buttons[1].Disabled = false;
+        _buttons[2].Visible = false;
     }
 
     private void ShowScene()
@@ -58,20 +87,26 @@ public partial class WinOrLost : Node2D
         _anim.Play("show");
         _pauseNode.QueueFree();
         Input.MouseMode = Input.MouseModeEnum.Visible;
-        SetButtonDisabledStatus(false);
     }
 
     private void _on_change_level_button_button_down()
     {
         _anim.Play("change_to_levels");
     }
-
-    public void SetCameraAudioFalse() => _camera.CanPlayAudio = false;
-
-    public void SetButtonDisabledStatus(bool status)
+    private void OnRestartButtonDown()
     {
-        _button.Disabled = status;
+        _levelToChange = _level.ThisLevelNum;
+        _anim.Play("change_scene");
+    }
+    private void OnNextLevelButtonDown()
+    {
+        if (_level.ThisLevelNum < 9)
+            _levelToChange = ++_level.ThisLevelNum;
+
+        _anim.Play("change_scene");
     }
 
+    public void ChangeScene() => GetTree().ChangeSceneToFile(_levelsPaths[_levelToChange]);
     public void ChangeToLevels() => GetTree().ChangeSceneToPacked(_levelsScene);
+    public void SetCameraAudioFalse() => _camera.CanPlayAudio = false;
 }

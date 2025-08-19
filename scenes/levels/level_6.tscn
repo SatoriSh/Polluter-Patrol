@@ -531,7 +531,7 @@ _data = {
 [node name="Level_6" type="Node2D" node_paths=PackedStringArray("_labelCountToWin", "_charactersInLevelArray", "_anim")]
 script = ExtResource("1_e18e5")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
-_thisLevelNum = 6
+ThisLevelNum = 6
 _maxPhotographedCharactersCount = 4
 _charactersInLevelArray = [NodePath("Character1"), NodePath("Character2"), NodePath("Character3")]
 _anim = NodePath("AnimationPlayer")
