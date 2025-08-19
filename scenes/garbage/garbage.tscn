@@ -29,6 +29,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -22)]
+}
 
 [sub_resource type="Animation" id="Animation_h37op"]
 resource_name = "fall"
@@ -57,6 +69,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, -1.36136]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -22), Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_we45p"]
 _data = {
@@ -65,7 +89,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h37op"]
-size = Vector2(20, 41)
+size = Vector2(20, 19)
 
 [node name="Garbage" type="Node2D" node_paths=PackedStringArray("_garbageSprites")]
 script = ExtResource("1_h37op")
@@ -101,9 +125,9 @@ libraries = {
 autoplay = "fall"
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -22)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_h37op")
