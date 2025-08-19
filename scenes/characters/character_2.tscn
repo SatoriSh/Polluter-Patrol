@@ -143,6 +143,21 @@ animations = [{
 radius = 7.0
 height = 20.0
 
+[sub_resource type="Animation" id="Animation_s8j55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ijfti"]
 resource_name = "disappear"
 length = 0.5
@@ -171,21 +186,6 @@ tracks/1/keys = {
 "args": [],
 "method": &"CharacterQueueFree"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_s8j55"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4cjd7"]
