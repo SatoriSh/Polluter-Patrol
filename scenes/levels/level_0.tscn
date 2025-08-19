@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://cv8h4a0ah715y"]
+[gd_scene load_steps=36 format=4 uid="uid://cv8h4a0ah715y"]
 
 [ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_xy1qu"]
 [ext_resource type="PackedScene" uid="uid://r46nf8norvus" path="res://scenes/menu/pause.tscn" id="2_3mnpy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="2_jjvta"]
 [ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="3_3mnpy"]
 [ext_resource type="Texture2D" uid="uid://b2hqx2j1mdok" path="res://sprites/UI/camera/Godot_v4.4.1-stable_mono_win64_ptsz86K1rZ.png" id="3_6ayib"]
+[ext_resource type="PackedScene" uid="uid://dvs8ysrob61rm" path="res://scenes/menu/win_or_lost.tscn" id="4_65guy"]
 [ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="4_xy1qu"]
 [ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="5_65guy"]
 
@@ -579,8 +580,12 @@ position = Vector2(915, 596)
 scale = Vector2(3823.5, 2313.33)
 texture = SubResource("CanvasTexture_fkk1g")
 
-[node name="Pause" parent="CanvasLayer" node_paths=PackedStringArray("buttons") instance=ExtResource("2_3mnpy")]
-buttons = []
+[node name="WinOrLost" parent="CanvasLayer" node_paths=PackedStringArray("_pauseNode", "_level") instance=ExtResource("4_65guy")]
+_pauseNode = NodePath("../Pause")
+_showOnlyLost = true
+_level = NodePath("../..")
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("2_3mnpy")]
 
 [node name="Ground" type="Node2D" parent="."]
 

@@ -7,6 +7,11 @@ public partial class PlayerCamera : Node2D
     [Export]
     private AnimationPlayer _anim;
 
+    [Export]
+    private AudioStream _cameraFlashSoundEffect;
+    private AudioStreamPlayer2D _audioStreamPlayer;
+    public bool CanPlayAudio = true;
+
     private List<Character> _charactersInZoom = new List<Character>();
     private List<Garbage> _garbageInZoom = new List<Garbage>();
 
@@ -30,6 +35,7 @@ public partial class PlayerCamera : Node2D
         {
             if (!_darkness) _anim.Play("flash");
             else _anim.Play("flash_darkness");
+
             CheckCharactersInZoom();
         }
     }
@@ -56,6 +62,20 @@ public partial class PlayerCamera : Node2D
         }
     }
 
+    public void PlaySound()
+    {
+        if (!CanPlayAudio) return;
+
+        var audioPlayer = _audioStreamPlayer = new();
+        AddChild(audioPlayer);
+
+        audioPlayer.Stream = _cameraFlashSoundEffect;
+        audioPlayer.VolumeDb = 0f;
+        audioPlayer.Finished += () => audioPlayer.QueueFree();
+
+        audioPlayer.Play();
+    }
+
     private void _on_area_2d_area_entered(Area2D area)
     {
         if (area.GetParent() as Character != null && area.GetParent() is Character character)
@@ -79,5 +99,4 @@ public partial class PlayerCamera : Node2D
             _garbageInZoom.Remove(garbage);
         }
     }
-
 }

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmc3tt4vi5qpu"]
+[gd_scene load_steps=12 format=3 uid="uid://dmc3tt4vi5qpu"]
 
 [ext_resource type="Script" uid="uid://bhpx6yjfakrwu" path="res://scenes/player camera/PlayerCamera.cs" id="1_6vm8v"]
+[ext_resource type="AudioStream" uid="uid://7135t0iffh2f" path="res://sounds/camera/vspyishka-fotoapparata-24053.ogg" id="2_dma8w"]
 [ext_resource type="Texture2D" uid="uid://dbtikkhm232am" path="res://sprites/UI/camera/camera_border.png" id="2_nivh7"]
 [ext_resource type="Texture2D" uid="uid://d0an5m2bh16ej" path="res://sprites/light texture/Godot_v4.4.1-stable_mono_win64_4r6Jl3kqoK.png" id="3_yvgv8"]
 [ext_resource type="Texture2D" uid="uid://dk2b5vyisv01m" path="res://sprites/light texture/64x64 textures (99).png" id="4_dma8w"]
@@ -52,6 +53,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlaySound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_dma8w"]
 resource_name = "flash_darkness"
@@ -68,6 +83,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlaySound"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dma8w"]
 _data = {
@@ -81,6 +110,7 @@ modulate = Color(1, 1, 1, 0.752941)
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_6vm8v")
 _anim = NodePath("AnimationPlayer")
+_cameraFlashSoundEffect = ExtResource("2_dma8w")
 _light = NodePath("PointLight2D")
 
 [node name="CameraBorder" type="NinePatchRect" parent="."]

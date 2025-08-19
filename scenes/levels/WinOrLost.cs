@@ -11,6 +11,9 @@ public partial class WinOrLost : Node2D
     private PackedScene _levelsScene;
 
     [Export]
+    private bool _showOnlyLost = false;
+
+    [Export]
     private AnimationPlayer _anim;
     [Export]
     private Label _label;
@@ -21,11 +24,19 @@ public partial class WinOrLost : Node2D
     [Export]
     private TextureButton _button;
 
+    private PlayerCamera _camera;
+
     public override void _Ready()
     {
+        _camera = GetNode<PlayerCamera>("../../PlayerCamera");
+
         _levelsScene = GD.Load<PackedScene>(_pathToLevelsScene);
 
-        _level.Win += OnWin;
+        if (!_showOnlyLost)
+        {
+            _level.Win += OnWin;
+        }
+
         _level.Lost += OnLost;
 
         SetButtonDisabledStatus(true);
@@ -54,6 +65,8 @@ public partial class WinOrLost : Node2D
     {
         _anim.Play("change_to_levels");
     }
+
+    public void SetCameraAudioFalse() => _camera.CanPlayAudio = false;
 
     public void SetButtonDisabledStatus(bool status)
     {
