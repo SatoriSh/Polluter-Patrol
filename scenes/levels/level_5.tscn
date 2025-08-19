@@ -1,20 +1,19 @@
-[gd_scene load_steps=36 format=4 uid="uid://ct5prqp5q86s6"]
+[gd_scene load_steps=35 format=4 uid="uid://rc0vr1bff46q"]
 
-[ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_ts8eg"]
-[ext_resource type="PackedScene" uid="uid://dvs8ysrob61rm" path="res://scenes/menu/win_or_lost.tscn" id="2_um320"]
-[ext_resource type="PackedScene" uid="uid://r46nf8norvus" path="res://scenes/menu/pause.tscn" id="3_glw47"]
-[ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="4_4wsov"]
-[ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="5_qvnao"]
-[ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="6_4wsov"]
-[ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="6_hsvsk"]
-[ext_resource type="PackedScene" uid="uid://bu44238t4f3y7" path="res://scenes/characters/character_3.tscn" id="7_fcb7b"]
-[ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="8_ov8fk"]
-[ext_resource type="PackedScene" uid="uid://blkoyir8apbwt" path="res://scenes/characters/character_4.tscn" id="9_qvnao"]
+[ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_dwyms"]
+[ext_resource type="PackedScene" uid="uid://dvs8ysrob61rm" path="res://scenes/menu/win_or_lost.tscn" id="2_6xwso"]
+[ext_resource type="PackedScene" uid="uid://r46nf8norvus" path="res://scenes/menu/pause.tscn" id="3_5ke18"]
+[ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="4_j14br"]
+[ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="5_0y7y4"]
+[ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="6_gruok"]
+[ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="7_h717f"]
+[ext_resource type="PackedScene" uid="uid://bu44238t4f3y7" path="res://scenes/characters/character_3.tscn" id="8_l8eod"]
+[ext_resource type="PackedScene" uid="uid://dmc3tt4vi5qpu" path="res://scenes/player camera/player_camera.tscn" id="10_fea5r"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fkk1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iwr0g"]
-texture = ExtResource("4_4wsov")
+texture = ExtResource("4_j14br")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -339,67 +338,67 @@ texture = ExtResource("4_4wsov")
 sources/0 = SubResource("TileSetAtlasSource_iwr0g")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sk5k4"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(0, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc4kc"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(48, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8va5"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(96, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dga24"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(144, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxy0u"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(192, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_excbq"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(240, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iav0o"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(288, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnkej"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(336, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mm8aj"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(384, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtwp4"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(432, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwr0g"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(480, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bahl2"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(528, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_np2pn"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(576, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6ha0"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(624, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmpev"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(672, 176, 48, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mkypq"]
-atlas = ExtResource("5_qvnao")
+atlas = ExtResource("5_0y7y4")
 region = Rect2(720, 176, 48, 44)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ndtll"]
@@ -529,12 +528,12 @@ _data = {
 &"hide": SubResource("Animation_ugcn1")
 }
 
-[node name="Level_4" type="Node2D" node_paths=PackedStringArray("_labelCountToWin", "_charactersInLevelArray", "_anim")]
-script = ExtResource("1_ts8eg")
+[node name="Level_5" type="Node2D" node_paths=PackedStringArray("_labelCountToWin", "_charactersInLevelArray", "_anim")]
+script = ExtResource("1_dwyms")
 _labelCountToWin = NodePath("CanvasLayer/CountToWin")
-_thisLevelNum = 4
+_thisLevelNum = 5
 _maxPhotographedCharactersCount = 1
-_charactersInLevelArray = [NodePath("Character1"), NodePath("Character2"), NodePath("Character3"), NodePath("Character4")]
+_charactersInLevelArray = [NodePath("Character1"), NodePath("Character2"), NodePath("Character3")]
 _anim = NodePath("AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -555,11 +554,11 @@ position = Vector2(915, 596)
 scale = Vector2(3823.5, 2313.33)
 texture = SubResource("CanvasTexture_fkk1g")
 
-[node name="WinOrLost" parent="CanvasLayer" node_paths=PackedStringArray("_pauseNode", "_level") instance=ExtResource("2_um320")]
+[node name="WinOrLost" parent="CanvasLayer" node_paths=PackedStringArray("_pauseNode", "_level") instance=ExtResource("2_6xwso")]
 _pauseNode = NodePath("../Pause")
 _level = NodePath("../..")
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("3_glw47")]
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("3_5ke18")]
 position = Vector2(0, -19)
 
 [node name="Ground" type="Node2D" parent="."]
@@ -812,68 +811,122 @@ sprite_frames = SubResource("SpriteFrames_ndtll")
 autoplay = "default"
 frame_progress = 0.179089
 
-[node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_4wsov")]
-position = Vector2(-450, 477)
-_speed = 165.0
-_pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2")]
+[node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_gruok")]
+position = Vector2(-240, 389)
+_speed = 280.0
+_pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2"), NodePath("../PointsForCharacter1/Marker2D3"), NodePath("../PointsForCharacter1/Marker2D4"), NodePath("../PointsForCharacter1/Marker2D5"), NodePath("../PointsForCharacter1/Marker2D6"), NodePath("../PointsForCharacter1/Marker2D7"), NodePath("../PointsForCharacter1/Marker2D8"), NodePath("../PointsForCharacter1/Marker2D9"), NodePath("../PointsForCharacter1/Marker2D10"), NodePath("../PointsForCharacter1/Marker2D11"), NodePath("../PointsForCharacter1/Marker2D12"), NodePath("../PointsForCharacter1/Marker2D13"), NodePath("../PointsForCharacter1/Marker2D14"), NodePath("../PointsForCharacter1/Marker2D15")]
 _timeToTakePicture = 0.9
 
 [node name="PointsForCharacter1" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(244, 500)
+position = Vector2(200, 404)
 
 [node name="Marker2D2" type="Marker2D" parent="PointsForCharacter1"]
-position = Vector2(466, -51)
+position = Vector2(326, 271)
 
-[node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_hsvsk")]
-position = Vector2(1353, -145)
-_speed = 120.0
-_pathPositions = [NodePath("../PointsForCharacter2/Marker2D"), NodePath("../PointsForCharacter2/Marker2D2")]
+[node name="Marker2D3" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(469, 416)
+
+[node name="Marker2D4" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(549, 330)
+
+[node name="Marker2D5" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(642, 454)
+
+[node name="Marker2D6" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(518, 597)
+
+[node name="Marker2D7" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(653, 654)
+
+[node name="Marker2D8" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(731, 581)
+
+[node name="Marker2D9" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(404, 485)
+
+[node name="Marker2D10" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(407, 654)
+
+[node name="Marker2D11" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(552, 542)
+
+[node name="Marker2D12" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(321, 366)
+
+[node name="Marker2D13" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(233, 615)
+
+[node name="Marker2D14" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(433, 563)
+
+[node name="Marker2D15" type="Marker2D" parent="PointsForCharacter1"]
+position = Vector2(-57, 418)
+
+[node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("7_h717f")]
+position = Vector2(1039, -31)
+_speed = 300.0
+_pathPositions = [NodePath("../PointsForCharacter2/Marker2D"), NodePath("../PointsForCharacter2/Marker2D2"), NodePath("../PointsForCharacter2/Marker2D3"), NodePath("../PointsForCharacter2/Marker2D4"), NodePath("../PointsForCharacter2/Marker2D5"), NodePath("../PointsForCharacter2/Marker2D6"), NodePath("../PointsForCharacter2/Marker2D7"), NodePath("../PointsForCharacter2/Marker2D8"), NodePath("../PointsForCharacter2/Marker2D9"), NodePath("../PointsForCharacter2/Marker2D10"), NodePath("../PointsForCharacter2/Marker2D11"), NodePath("../PointsForCharacter2/Marker2D12")]
 _timeToTakePicture = 1.35
 
 [node name="PointsForCharacter2" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="PointsForCharacter2"]
-position = Vector2(1334, 283)
+position = Vector2(1031, 236)
 
 [node name="Marker2D2" type="Marker2D" parent="PointsForCharacter2"]
-position = Vector2(1974, 314)
+position = Vector2(864, 394)
 
-[node name="Character3" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("7_fcb7b")]
-position = Vector2(1087, -434)
-_speed = 160.0
+[node name="Marker2D3" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(470, 295)
+
+[node name="Marker2D4" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(366, 427)
+
+[node name="Marker2D5" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(558, 518)
+
+[node name="Marker2D6" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(721, 347)
+
+[node name="Marker2D7" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(547, 399)
+
+[node name="Marker2D8" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(731, 477)
+
+[node name="Marker2D9" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(306, 495)
+
+[node name="Marker2D10" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(827, 197)
+
+[node name="Marker2D11" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(451, 355)
+
+[node name="Marker2D12" type="Marker2D" parent="PointsForCharacter2"]
+position = Vector2(-60, 358)
+
+[node name="Character3" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("8_l8eod")]
+position = Vector2(1380, -575)
 _pathPositions = [NodePath("../PointsForCharacter3/Marker2D"), NodePath("../PointsForCharacter3/Marker2D2")]
-_timeToTakePicture = 1.0
+_timeToTakePicture = 1.5
 
 [node name="PointsForCharacter3" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="PointsForCharacter3"]
-position = Vector2(1049, 253)
+position = Vector2(1371, 82)
 
 [node name="Marker2D2" type="Marker2D" parent="PointsForCharacter3"]
-position = Vector2(1530, -35)
+position = Vector2(1374, -37)
 
-[node name="Character4" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("9_qvnao")]
-position = Vector2(684, -61)
-_speed = 190.0
-_pathPositions = [NodePath("../PointsForCharacter4/Marker2D"), NodePath("../PointsForCharacter4/Marker2D2")]
-_timeToTakePicture = 0.55
-
-[node name="PointsForCharacter4" type="Node2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="PointsForCharacter4"]
-position = Vector2(597, 230)
-
-[node name="Marker2D2" type="Marker2D" parent="PointsForCharacter4"]
-position = Vector2(-77, 257)
-
-[node name="PlayerCamera" parent="." instance=ExtResource("8_ov8fk")]
+[node name="PlayerCamera" parent="." instance=ExtResource("10_fea5r")]
 
 [node name="Triggers" type="Node2D" parent="."]
 
 [node name="Trigger2" type="Area2D" parent="Triggers" groups=["triggers"]]
-position = Vector2(1262, 119)
+position = Vector2(1371, 82)
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 2
