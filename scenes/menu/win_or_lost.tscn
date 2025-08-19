@@ -131,6 +131,7 @@ offset_top = 440.0
 offset_right = 911.0
 offset_bottom = 480.0
 scale = Vector2(4.5, 4.5)
+focus_mode = 0
 texture_normal = ExtResource("3_mg5yg")
 texture_pressed = ExtResource("3_mg5yg")
 texture_hover = ExtResource("4_tjcco")
