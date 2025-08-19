@@ -31,6 +31,9 @@ public partial class Character : CharacterBody2D
     [Export]
     private AnimationPlayer _animPlayer;
 
+    [Export]
+    private bool _surfCharacter = false;
+
     public override void _Ready()
     {
         _timerToTakePicture.Autostart = false;
@@ -98,6 +101,13 @@ public partial class Character : CharacterBody2D
 
     private void SetAnim()
     {
+        if (_surfCharacter)
+        {
+            _anim.Play("move");
+            _anim.FlipH = _direction.X > 0;
+            return;
+        }
+
         if (Math.Abs(_direction.X) > Math.Abs(_direction.Y))
             _anim.Play(_direction.X > 0 ? "move_right" : "move_left");
         else

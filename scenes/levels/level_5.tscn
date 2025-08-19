@@ -935,6 +935,16 @@ collision_mask = 2
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_oc4kc")
 
+[node name="Trigger3" type="Area2D" parent="Triggers" groups=["triggers"]]
+position = Vector2(411, 834)
+scale = Vector2(1.5, 1.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Trigger3"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_oc4kc")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_2bnyt")
