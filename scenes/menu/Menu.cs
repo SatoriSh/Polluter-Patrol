@@ -10,12 +10,17 @@ public partial class Menu : Node2D
 
     private bool _animPlaying = false;
 
+    private Music _music;
+
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Visible;
         GetTree().Paused = false;
 
         _levelsScene = GD.Load<PackedScene>("res://scenes/menu/levels_menu.tscn");
+
+        _music = GetNode("/root/Music") as Music;
+        _music.PlayMusic();
     }
 
     private void _on_play_button_button_down()
@@ -33,6 +38,7 @@ public partial class Menu : Node2D
         {
             _animPlaying = true;
             anim.Play("exit");
+            _music.StopMusic();
         }
     }
 

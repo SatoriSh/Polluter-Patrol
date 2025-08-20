@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1v4e0nf7p8s"]
+[gd_scene load_steps=7 format=3 uid="uid://1v4e0nf7p8s"]
 
-[ext_resource type="AudioStream" uid="uid://baldxhd3tshrr" path="res://sounds/music/DavidKBD - 01 - Sunset Spin.ogg" id="1_3h6ak"]
+[ext_resource type="AudioStream" uid="uid://baldxhd3tshrr" path="res://sounds/music/DavidKBD - 01 - Sunset Spin.ogg" id="1_godbx"]
+[ext_resource type="Script" uid="uid://elyl6cbuad58" path="res://scenes/Music/Music.cs" id="1_vv2v3"]
 
 [sub_resource type="Animation" id="Animation_5vxup"]
 length = 0.001
@@ -18,8 +19,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_3h6ak"]
-resource_name = "volumeapp"
-length = 10.0
+resource_name = "PlusVolume"
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,28 +28,43 @@ tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
+"times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-15.0, 5.0]
 }
 
+[sub_resource type="Animation" id="Animation_vv2v3"]
+resource_name = "MinusVolume"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5.0, -15.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w5q55"]
 _data = {
-&"RESET": SubResource("Animation_5vxup"),
-&"volumeapp": SubResource("Animation_3h6ak")
+&"MinusVolume": SubResource("Animation_vv2v3"),
+&"PlusVolume": SubResource("Animation_3h6ak"),
+&"RESET": SubResource("Animation_5vxup")
 }
 
 [node name="Music" type="Node2D"]
+script = ExtResource("1_vv2v3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_3h6ak")
+stream = ExtResource("1_godbx")
 volume_db = -10.0
-autoplay = true
 parameters/looping = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_w5q55")
 }
-autoplay = "volumeapp"
