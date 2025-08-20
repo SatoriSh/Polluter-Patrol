@@ -813,7 +813,7 @@ frame_progress = 0.179089
 
 [node name="Character1" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("6_tqv5a")]
 position = Vector2(2066, 61)
-_speed = 120.0
+_speed = 160.0
 _pathPositions = [NodePath("../PointsForCharacter1/Marker2D"), NodePath("../PointsForCharacter1/Marker2D2")]
 _timeToTakePicture = 1.4
 
@@ -827,7 +827,7 @@ position = Vector2(1443, -48)
 
 [node name="Character2" parent="." node_paths=PackedStringArray("_pathPositions") instance=ExtResource("7_ppjov")]
 position = Vector2(1039, -31)
-_speed = 135.0
+_speed = 160.0
 _pathPositions = [NodePath("../PointsForCharacter2/Marker2D"), NodePath("../PointsForCharacter2/Marker2D2")]
 _timeToTakePicture = 1.35
 
