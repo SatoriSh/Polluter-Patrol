@@ -585,7 +585,8 @@ _pauseNode = NodePath("../Pause")
 _showOnlyLost = true
 _level = NodePath("../..")
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("2_3mnpy")]
+[node name="Pause" parent="CanvasLayer" node_paths=PackedStringArray("_level") instance=ExtResource("2_3mnpy")]
+_level = NodePath("../..")
 
 [node name="Ground" type="Node2D" parent="."]
 

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Pause : Node2D
 {
@@ -22,6 +23,23 @@ public partial class Pause : Node2D
 
     Timer timer = new Timer();
     private bool _canOpenPauseMenu = true;
+
+    [Export]
+    private Level _level;
+
+    private Dictionary<int, string> _levelsPaths = new()
+    {
+        {0, "res://scenes/levels/level_0.tscn"},
+        {1, "res://scenes/levels/level_1.tscn"},
+        {2, "res://scenes/levels/level_2.tscn"},
+        {3, "res://scenes/levels/level_3.tscn"},
+        {4, "res://scenes/levels/level_4.tscn"},
+        {5, "res://scenes/levels/level_5.tscn"},
+        {6, "res://scenes/levels/level_6.tscn"},
+        {7, "res://scenes/levels/level_7.tscn"},
+        {8, "res://scenes/levels/level_8.tscn"},
+        {9, "res://scenes/levels/level_9.tscn"},
+    };
 
     public override void _Ready()
     {
@@ -80,6 +98,15 @@ public partial class Pause : Node2D
             _animPlaying = true;
         }
     }
+    private void _on_restart_button_button_down()
+    {
+        if (!_animPlaying)
+        {
+            _anim.Play("restart_level");
+            _animPlaying = true;
+            GetTree().Paused = false;
+        }
+    }
 
     public void SetButtonsDisabledStatus(bool status)
     {
@@ -89,6 +116,7 @@ public partial class Pause : Node2D
         }
     }
 
+    public void RestartLevel() => GetTree().ChangeSceneToFile(_levelsPaths[_level.ThisLevelNum]);
     public void ChangeSceneToMenu() => GetTree().ChangeSceneToPacked(_menuScene);
     public void ChangeSceneToLevels() => GetTree().ChangeSceneToPacked(_levelsScene);
 

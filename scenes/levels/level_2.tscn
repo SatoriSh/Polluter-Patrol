@@ -556,7 +556,8 @@ texture = SubResource("CanvasTexture_fkk1g")
 _pauseNode = NodePath("../Pause")
 _level = NodePath("../..")
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("3_qsp8v")]
+[node name="Pause" parent="CanvasLayer" node_paths=PackedStringArray("_level") instance=ExtResource("3_qsp8v")]
+_level = NodePath("../..")
 
 [node name="Ground" type="Node2D" parent="."]
 

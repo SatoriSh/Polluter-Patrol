@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://r46nf8norvus"]
+[gd_scene load_steps=21 format=3 uid="uid://r46nf8norvus"]
 
 [ext_resource type="Script" uid="uid://d1cm5ud2cbnin" path="res://scenes/menu/Pause.cs" id="1_4wejy"]
 [ext_resource type="Texture2D" uid="uid://ck1uam06ulr30" path="res://sprites/UI/buttons/levels/buttontomenu.png" id="2_w7v8u"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://clfa1vcpl0y42" path="res://sprites/UI/buttons/buttonpauseoffhover.png" id="5_d33x0"]
 [ext_resource type="Texture2D" uid="uid://brmj8rndg0vmp" path="res://sprites/UI/buttons/levels/buttontolevels.png" id="6_8ptb7"]
 [ext_resource type="Texture2D" uid="uid://b0mthh85vxcrt" path="res://sprites/UI/buttons/levels/buttontolevelshover.png" id="7_t1j0g"]
+[ext_resource type="Texture2D" uid="uid://bkxbusnwmbyw0" path="res://sprites/UI/buttons/levels/restartButton.png" id="10_8ptb7"]
+[ext_resource type="Texture2D" uid="uid://umd53n8endx" path="res://sprites/UI/buttons/levels/restartButtonHover.png" id="11_t1j0g"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_w7v8u"]
 
@@ -161,12 +163,43 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_8ptb7"]
+resource_name = "restart_level"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Background2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"RestartLevel"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1mso8"]
 _data = {
 &"RESET": SubResource("Animation_d33x0"),
 &"change_to_levels": SubResource("Animation_yl1uf"),
 &"change_to_menu": SubResource("Animation_bbwxq"),
 &"hide": SubResource("Animation_1mso8"),
+&"restart_level": SubResource("Animation_8ptb7"),
 &"show": SubResource("Animation_4wejy")
 }
 
@@ -177,7 +210,7 @@ script = ExtResource("1_4wejy")
 _anim = NodePath("AnimationPlayer")
 _menuScene = ExtResource("2_yl1uf")
 _levelsScene = ExtResource("3_d33x0")
-buttons = [NodePath("ButtonToMenu"), NodePath("ButtonPauseOff"), NodePath("ChangeLevelButton")]
+buttons = [NodePath("ButtonToMenu"), NodePath("ButtonPauseOff"), NodePath("ChangeLevelButton"), NodePath("RestartButton")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -237,6 +270,18 @@ texture_pressed = ExtResource("6_8ptb7")
 texture_hover = ExtResource("7_t1j0g")
 stretch_mode = 4
 
+[node name="RestartButton" type="TextureButton" parent="."]
+offset_left = 875.0
+offset_top = 651.0
+offset_right = 915.0
+offset_bottom = 691.0
+scale = Vector2(4.5, 4.5)
+focus_mode = 0
+texture_normal = ExtResource("10_8ptb7")
+texture_pressed = ExtResource("10_8ptb7")
+texture_hover = ExtResource("11_t1j0g")
+stretch_mode = 4
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_1mso8")
@@ -245,3 +290,4 @@ libraries = {
 [connection signal="button_down" from="ButtonToMenu" to="." method="_on_button_to_menu_button_down"]
 [connection signal="button_up" from="ButtonPauseOff" to="." method="_on_button_pause_off_button_up"]
 [connection signal="button_down" from="ChangeLevelButton" to="." method="_on_change_level_button_button_down"]
+[connection signal="button_down" from="RestartButton" to="." method="_on_restart_button_button_down"]
