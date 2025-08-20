@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8iujsvsagrhv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6aq3k"]
+
+[sub_resource type="Animation" id="Animation_t3p5v"]
+resource_name = "show"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y0iec"]
+_data = {
+&"show": SubResource("Animation_t3p5v")
+}
+
+[node name="Titres" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(965.25, 534.75)
+scale = Vector2(6075.5, 3367.24)
+texture = SubResource("CanvasTexture_6aq3k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y0iec")
+}
