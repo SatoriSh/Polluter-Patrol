@@ -10,14 +10,6 @@ public partial class SaveManager : Node
         Instance = this;
     }
 
-    public override void _Process(double delta)
-    {
-        if (Input.IsActionJustPressed("ResetSave"))
-        {
-            ResetSave();
-        }
-    }
-
     public static void SaveLevel(int levelNum, bool force)
     {
         if (!force)
