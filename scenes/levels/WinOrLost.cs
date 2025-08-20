@@ -38,7 +38,7 @@ public partial class WinOrLost : Node2D
         {5, "res://scenes/levels/level_5.tscn"},
         {6, "res://scenes/levels/level_6.tscn"},
         {7, "res://scenes/levels/level_7.tscn"},
-        {8, ""},
+        {8, "res://scenes/levels/level_8.tscn"},
         {9, ""},
     };
 
