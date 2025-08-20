@@ -2,22 +2,6 @@
 
 [ext_resource type="AudioStream" uid="uid://baldxhd3tshrr" path="res://sounds/music/DavidKBD - 01 - Sunset Spin.ogg" id="1_3h6ak"]
 
-[sub_resource type="Animation" id="Animation_3h6ak"]
-resource_name = "volumeapp"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-15.0, 0.0]
-}
-
 [sub_resource type="Animation" id="Animation_5vxup"]
 length = 0.001
 tracks/0/type = "value"
@@ -31,6 +15,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-10.0]
+}
+
+[sub_resource type="Animation" id="Animation_3h6ak"]
+resource_name = "volumeapp"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-15.0, 5.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w5q55"]
