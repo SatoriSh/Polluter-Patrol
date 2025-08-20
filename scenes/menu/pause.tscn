@@ -235,9 +235,9 @@ theme_override_font_sizes/font_size = 100
 text = "Pause"
 
 [node name="ButtonToMenu" type="TextureButton" parent="."]
-offset_left = 602.0
+offset_left = 631.0
 offset_top = 458.0
-offset_right = 642.0
+offset_right = 671.0
 offset_bottom = 498.0
 scale = Vector2(4.5, 4.5)
 focus_mode = 0
@@ -259,9 +259,9 @@ texture_hover = ExtResource("5_d33x0")
 stretch_mode = 4
 
 [node name="ChangeLevelButton" type="TextureButton" parent="."]
-offset_left = 1153.0
+offset_left = 1114.0
 offset_top = 458.0
-offset_right = 1193.0
+offset_right = 1154.0
 offset_bottom = 498.0
 scale = Vector2(4.5, 4.5)
 focus_mode = 0
@@ -272,9 +272,9 @@ stretch_mode = 4
 
 [node name="RestartButton" type="TextureButton" parent="."]
 offset_left = 875.0
-offset_top = 651.0
+offset_top = 685.0
 offset_right = 915.0
-offset_bottom = 691.0
+offset_bottom = 725.0
 scale = Vector2(4.5, 4.5)
 focus_mode = 0
 texture_normal = ExtResource("10_8ptb7")
