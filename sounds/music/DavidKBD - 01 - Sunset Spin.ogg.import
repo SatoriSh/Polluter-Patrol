@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://baldxhd3tshrr"
+path="res://.godot/imported/DavidKBD - 01 - Sunset Spin.ogg-675a03e205432708ebcdc5e874b35035.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/music/DavidKBD - 01 - Sunset Spin.ogg"
+dest_files=["res://.godot/imported/DavidKBD - 01 - Sunset Spin.ogg-675a03e205432708ebcdc5e874b35035.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

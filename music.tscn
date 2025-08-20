@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://1v4e0nf7p8s"]
+
+[ext_resource type="AudioStream" uid="uid://baldxhd3tshrr" path="res://sounds/music/DavidKBD - 01 - Sunset Spin.ogg" id="1_3h6ak"]
+
+[sub_resource type="Animation" id="Animation_3h6ak"]
+resource_name = "volumeapp"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -10.0]
+}
+
+[sub_resource type="Animation" id="Animation_5vxup"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w5q55"]
+_data = {
+&"RESET": SubResource("Animation_5vxup"),
+&"volumeapp": SubResource("Animation_3h6ak")
+}
+
+[node name="Music" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_3h6ak")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w5q55")
+}
+autoplay = "volumeapp"

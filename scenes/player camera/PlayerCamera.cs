@@ -70,7 +70,7 @@ public partial class PlayerCamera : Node2D
         AddChild(audioPlayer);
 
         audioPlayer.Stream = _cameraFlashSoundEffect;
-        audioPlayer.VolumeDb = 0f;
+        audioPlayer.VolumeDb = -5f;
         audioPlayer.Finished += () => audioPlayer.QueueFree();
 
         audioPlayer.Play();
