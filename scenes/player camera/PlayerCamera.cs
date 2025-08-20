@@ -61,7 +61,7 @@ public partial class PlayerCamera : Node2D
             }
         }
     }
-
+    
     public void PlaySound()
     {
         if (!CanPlayAudio) return;

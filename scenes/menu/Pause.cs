@@ -98,7 +98,7 @@ public partial class Pause : Node2D
             _animPlaying = true;
         }
     }
-    private void _on_restart_button_button_down()
+    private void _on_restart_button_button_up()
     {
         if (!_animPlaying)
         {

@@ -46,7 +46,7 @@ public partial class Level : Node2D
     {
         Input.MouseMode = Input.MouseModeEnum.Hidden;
 
-        _labelCountToWin.Text = $"Caught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
+        _labelCountToWin.Text = $"LVL {ThisLevelNum}\nCaught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
 
         foreach (CharacterBody2D ch in _charactersInLevelArray)
         {
@@ -79,7 +79,7 @@ public partial class Level : Node2D
     public void UpdateLabelCountToWinText()
     {
         _photographedCharactersCount++;
-        _labelCountToWin.Text = $"Caught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
+        _labelCountToWin.Text = $"LVL {ThisLevelNum}\nCaught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
 
         if (_alreadyWinOrLost) return;
 

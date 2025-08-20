@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://obnb1il1707b"]
+
+[ext_resource type="Script" uid="uid://bvgmuvvyr3lhy" path="res://scenes/boot_splash/BootSplash.cs" id="1_c8xan"]
+[ext_resource type="PackedScene" uid="uid://cl45c4g4lvdh3" path="res://scenes/menu/menu.tscn" id="2_w5iep"]
+[ext_resource type="Texture2D" uid="uid://bmeac3mt1r35k" path="res://sprites/UI/AutisticGamesLogo.png" id="3_sqa31"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tm2xg"]
+
+[sub_resource type="Animation" id="Animation_pr58l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7fg05"]
+resource_name = "show_logo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1, 2.83333, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeScene"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_71hcm"]
+_data = {
+&"RESET": SubResource("Animation_pr58l"),
+&"show_logo": SubResource("Animation_7fg05")
+}
+
+[node name="BootSplash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c8xan")
+_mainMenuScene = ExtResource("2_w5iep")
+
+[node name="AutisticGamesLogo" type="Sprite2D" parent="."]
+scale = Vector2(1.20444, 1.20444)
+texture = ExtResource("3_sqa31")
+offset = Vector2(800, 450)
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1040, 562.5)
+scale = Vector2(2962, 2091)
+texture = SubResource("CanvasTexture_tm2xg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_71hcm")
+}
+autoplay = "show_logo"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=4 uid="uid://clmc42il5di4g"]
+[gd_scene load_steps=38 format=4 uid="uid://clmc42il5di4g"]
 
 [ext_resource type="Script" uid="uid://d2e7853twa76f" path="res://scenes/levels/Level.cs" id="1_kj523"]
 [ext_resource type="PackedScene" uid="uid://dvs8ysrob61rm" path="res://scenes/menu/win_or_lost.tscn" id="2_xampj"]
 [ext_resource type="PackedScene" uid="uid://r46nf8norvus" path="res://scenes/menu/pause.tscn" id="3_xev4b"]
 [ext_resource type="Texture2D" uid="uid://ca4evpvpeddq5" path="res://sprites/ground/rpg.png" id="4_v1y24"]
+[ext_resource type="PackedScene" uid="uid://c8iujsvsagrhv" path="res://scenes/menu/titres.tscn" id="4_xev4b"]
 [ext_resource type="Texture2D" uid="uid://bmabl2rorrjlu" path="res://sprites/ground/rpgg.png" id="5_ylwrn"]
 [ext_resource type="PackedScene" uid="uid://d1qbjga16vtp8" path="res://scenes/characters/character_1.tscn" id="6_c68rt"]
 [ext_resource type="PackedScene" uid="uid://c0coql15xoe7n" path="res://scenes/characters/character_2.tscn" id="7_b7r0f"]
@@ -545,10 +546,8 @@ offset_left = 8.0
 offset_top = 2.0
 offset_right = 64.0
 offset_bottom = 25.0
-theme_override_font_sizes/font_size = 85
+theme_override_font_sizes/font_size = 50
 text = "Caught: "
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Background" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
@@ -564,6 +563,11 @@ _level = NodePath("../..")
 [node name="Pause" parent="CanvasLayer" node_paths=PackedStringArray("_level") instance=ExtResource("3_xev4b")]
 position = Vector2(0, -19)
 _level = NodePath("../..")
+
+[node name="Titres" parent="CanvasLayer" node_paths=PackedStringArray("_level", "_pauseNode", "_camera") instance=ExtResource("4_xev4b")]
+_level = NodePath("../..")
+_pauseNode = NodePath("../Pause")
+_camera = NodePath("../../PlayerCamera")
 
 [node name="Ground" type="Node2D" parent="."]
 

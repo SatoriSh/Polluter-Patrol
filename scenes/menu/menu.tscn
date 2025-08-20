@@ -770,6 +770,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_f2fum"]
+
 [sub_resource type="Animation" id="Animation_t0a87"]
 length = 0.001
 tracks/0/type = "value"
@@ -866,8 +868,6 @@ _data = {
 &"hide": SubResource("Animation_qo0fc"),
 &"show": SubResource("Animation_3y2rt")
 }
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_f2fum"]
 
 [node name="Menu" type="Node2D" node_paths=PackedStringArray("anim")]
 process_mode = 3
@@ -1115,17 +1115,17 @@ texture_pressed = ExtResource("5_r8yej")
 texture_hover = ExtResource("6_3y2rt")
 stretch_mode = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_k48pe")
-}
-autoplay = "hide"
-
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(1235, 497.5)
 scale = Vector2(5744, 3417.93)
 texture = SubResource("CanvasTexture_f2fum")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_k48pe")
+}
+autoplay = "hide"
 
 [connection signal="button_down" from="PlayButton" to="." method="_on_play_button_button_down"]
 [connection signal="button_down" from="ExitButton" to="." method="_on_exit_button_button_down"]
