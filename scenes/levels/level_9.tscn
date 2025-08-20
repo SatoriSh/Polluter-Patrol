@@ -558,6 +558,7 @@ texture = SubResource("CanvasTexture_fkk1g")
 
 [node name="WinOrLost" parent="CanvasLayer" node_paths=PackedStringArray("_pauseNode", "_level") instance=ExtResource("2_xampj")]
 _pauseNode = NodePath("../Pause")
+_showOnlyLost = true
 _level = NodePath("../..")
 
 [node name="Pause" parent="CanvasLayer" node_paths=PackedStringArray("_level") instance=ExtResource("3_xev4b")]
