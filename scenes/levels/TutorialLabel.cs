@@ -3,7 +3,7 @@ using System;
 
 public partial class TutorialLabel : Label
 {
-	private string _tutorialText = "Photograph people standing near litter to document their violation\n(left click, enter or space)";
+	private string _tutorialText = "Photograph people standing near litter to document their violation\n(left click, enter or space)\nTo pause: ESC/P";
 	private string _winTutorialText = "Good job!";
 
 	private char[] _letters;

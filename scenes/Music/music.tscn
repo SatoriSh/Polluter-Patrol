@@ -3,8 +3,8 @@
 [ext_resource type="AudioStream" uid="uid://baldxhd3tshrr" path="res://sounds/music/DavidKBD - 01 - Sunset Spin.ogg" id="1_godbx"]
 [ext_resource type="Script" uid="uid://elyl6cbuad58" path="res://scenes/Music/Music.cs" id="1_vv2v3"]
 
-[sub_resource type="Animation" id="Animation_5vxup"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_vv2v3"]
+resource_name = "MinusVolume"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -12,10 +12,10 @@ tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-10.0]
+"values": [5.0, -15.0]
 }
 
 [sub_resource type="Animation" id="Animation_3h6ak"]
@@ -34,8 +34,8 @@ tracks/0/keys = {
 "values": [-15.0, 5.0]
 }
 
-[sub_resource type="Animation" id="Animation_vv2v3"]
-resource_name = "MinusVolume"
+[sub_resource type="Animation" id="Animation_5vxup"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -43,10 +43,10 @@ tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [5.0, -15.0]
+"values": [-10.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w5q55"]

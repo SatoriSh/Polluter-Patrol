@@ -28,6 +28,8 @@ public partial class Level : Node2D
 
     private bool _alreadyWinOrLost = false;
 
+    private string _countToWinText;
+
     public void WinEventHandlerEmit()
     {
         EmitSignal(SignalName.Win);
@@ -45,8 +47,10 @@ public partial class Level : Node2D
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Hidden;
+        if (ThisLevelNum > 0) _countToWinText = $"LVL {ThisLevelNum}\nCaught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
+        else _countToWinText =  $"Tutorial\nCaught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
 
-        _labelCountToWin.Text = $"LVL {ThisLevelNum}\nCaught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
+        _labelCountToWin.Text = _countToWinText;
 
         foreach (CharacterBody2D ch in _charactersInLevelArray)
         {
@@ -79,7 +83,11 @@ public partial class Level : Node2D
     public void UpdateLabelCountToWinText()
     {
         _photographedCharactersCount++;
-        _labelCountToWin.Text = $"LVL {ThisLevelNum}\nCaught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
+        
+        if (ThisLevelNum > 0) _countToWinText = $"LVL {ThisLevelNum}\nCaught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
+        else _countToWinText = $"Tutorial\nCaught: {_photographedCharactersCount}/{_maxPhotographedCharactersCount}";
+
+        _labelCountToWin.Text = _countToWinText;
 
         if (_alreadyWinOrLost) return;
 

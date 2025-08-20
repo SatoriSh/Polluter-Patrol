@@ -550,12 +550,13 @@ text = "Caught: "
 [node name="TutorialLabel" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("_level")]
 modulate = Color(1, 0.956863, 1, 1)
 offset_left = 257.0
-offset_top = 626.0
+offset_top = 569.0
 offset_right = 1709.0
-offset_bottom = 755.0
+offset_bottom = 764.0
 theme_override_font_sizes/font_size = 45
 text = "Photograph people standing near litter to document their violation
-(left click, enter or space)"
+(left click, enter or space)
+to pause: ESC/P"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_6ayib")
@@ -563,12 +564,12 @@ _level = NodePath("../..")
 
 [node name="ExampleSpriteBorder" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(957, 113.5)
+position = Vector2(953, 136.5)
 scale = Vector2(282, 189)
 texture = SubResource("CanvasTexture_65guy")
 
 [node name="ExpampleSprite" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(957, 113)
+position = Vector2(953, 136)
 scale = Vector2(1.68932, 1.68932)
 texture = ExtResource("3_6ayib")
 

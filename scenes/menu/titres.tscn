@@ -4,21 +4,6 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_6aq3k"]
 
-[sub_resource type="Animation" id="Animation_t3p5v"]
-resource_name = "show"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_6aq3k"]
 length = 0.001
 tracks/0/type = "value"
@@ -59,7 +44,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(182, 1210.94), Vector2(182, -1665.63)]
+"values": [Vector2(182, 1210.94), Vector2(182, -1800)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -77,6 +62,21 @@ tracks/1/keys = {
 "args": [],
 "method": &"ChangeSceenToLevelsMenu"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_t3p5v"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y0iec"]
@@ -100,9 +100,9 @@ texture = SubResource("CanvasTexture_6aq3k")
 [node name="Label" type="Label" parent="."]
 z_index = 310
 offset_left = 182.0
-offset_top = 1210.94
+offset_top = -1800.0
 offset_right = 1753.0
-offset_bottom = 2863.94
+offset_bottom = -3.0
 theme_override_font_sizes/font_size = 50
 text = "THANKS FOR PLAYING!
 
@@ -124,7 +124,11 @@ Surfboards: Durelo (https://vk.com/id578712265)
 Tilemap: BigBoots (https://bigboots.itch.io)
 
 MUSIC:
-David KBD (https://www.davidkbd.com | https://davidkbd.itch.io)"
+David KBD (https://www.davidkbd.com | https://davidkbd.itch.io)
+
+Made with Godot Engine .NET 4.4.1
+
+Thank you for playing! ❤️"
 horizontal_alignment = 1
 vertical_alignment = 1
 
