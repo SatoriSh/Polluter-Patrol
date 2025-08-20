@@ -6,8 +6,8 @@ public partial class LevelsMenu : Node2D
     private PackedScene _menuScene;
 
     [Export]
-    private string[] _pathToScenes = new string[9];
-    private PackedScene[] _scenes = new PackedScene[9];
+    private string[] _pathToScenes = new string[10];
+    private PackedScene[] _scenes = new PackedScene[10];
 
     [Export]
     private AnimationPlayer _anim;

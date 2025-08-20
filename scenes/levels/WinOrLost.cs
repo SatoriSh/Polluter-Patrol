@@ -39,7 +39,7 @@ public partial class WinOrLost : Node2D
         {6, "res://scenes/levels/level_6.tscn"},
         {7, "res://scenes/levels/level_7.tscn"},
         {8, "res://scenes/levels/level_8.tscn"},
-        {9, ""},
+        {9, "res://scenes/levels/level_9.tscn"},
     };
 
     private int _levelToChange;
@@ -68,7 +68,15 @@ public partial class WinOrLost : Node2D
         _label.Text = "Good job! You've got everyone!";
         ShowScene();
 
-        if (_level.ThisLevelNum < 9) _buttons[2].Disabled = false;
+        if (_level.ThisLevelNum < 9)
+        {
+            _buttons[2].Disabled = false;
+        }
+        else
+        {
+            _buttons[2].Disabled = true;
+            _buttons[2].Visible = false;
+        }
         _buttons[0].Disabled = false;
         _buttons[1].Disabled = false;
     }

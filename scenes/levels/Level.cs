@@ -62,6 +62,7 @@ public partial class Level : Node2D
         {
             foreach (Character ch in _charactersInLevel)
             {
+                if (ch == null) continue;
                 if (!IsInstanceValid(ch))
                 {
                     _charactersInLevel.Remove(ch);
