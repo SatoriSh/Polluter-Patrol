@@ -100,9 +100,9 @@ texture = SubResource("CanvasTexture_6aq3k")
 [node name="Label" type="Label" parent="."]
 z_index = 310
 offset_left = 182.0
-offset_top = -1800.0
+offset_top = 1080.0
 offset_right = 1753.0
-offset_bottom = -3.0
+offset_bottom = 2877.0
 theme_override_font_sizes/font_size = 50
 text = "THANKS FOR PLAYING!
 
