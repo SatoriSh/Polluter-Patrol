@@ -1,41 +1,41 @@
 # Polluter Patrol 📸🌊
 
-**Polluter Patrol** — это игра, созданная за 7 дней для геймджема **ExpressJam 2025** на тему "COAST". Ваша задача — патрулировать пляж и ловить загрязнителей на камеру!
+**Polluter Patrol** is a game created in 7 days for the **ExpressJam 2025** game jam on the theme "COAST". Your task is to patrol the beach and catch polluters on camera!
 
 ---
 
-## 🎮 Об игре
+## 🎮 About the Game
 
-В этой игре вы выступаете в роли пляжного патрульного, вооруженного фотоаппаратом. Ваша миссия — следить за отдыхающими и успевать фотографировать тех, кто бросает мусор, в самый нужный момент. Не дайте нарушителям испортить прекрасный прибрежный пейзаж!
+In this game, you play as a beach patrol officer armed with a camera. Your mission is to monitor beachgoers and manage to photograph those who litter at the exact right moment. Don't let the violators ruin the beautiful coastal landscape!
 
-Игра проверяет вашу реакцию и внимательность, ведь поймать загрязнителя с поличным нужно точно в тайминг.
+The game tests your reaction and attentiveness, as you need to catch a polluter red-handed with precise timing.
 
-### Ссылки
-* **[🕹️ Поиграть в игру на itch.io](https://satorish.itch.io/polluter-patrol)**
-* **[🐦 Наш Twitter (Autistic Games)](https://x.com/_AutisticGames)**
-
----
-
-## 🛠️ Технологии
-
-* **Движок:** Godot Engine v4.1.1 (Mono / .NET)
-* **Язык:** C#
+### Links
+* **[🕹️ Play the game on itch.io](https://satorish.itch.io/polluter-patrol)**
+* **[🐦 Our Twitter (Autistic Games)](https://x.com/_AutisticGames)**
 
 ---
 
-## 📜 Лицензия
+## 🛠️ Technologies
 
-Этот проект распространяется по лицензии **Creative Commons Attribution-NonCommercial 4.0 International**.
-
-Это означает, что вы можете свободно:
-* Просматривать и изучать код.
-* Использовать фрагменты кода в своих **некоммерческих** проектах при условии указания авторства.
-
-Вы **не можете**:
-* Использовать этот проект или его производные в коммерческих целях.
-
-Для получения полной информации, пожалуйста, ознакомьтесь с файлом [LICENSE](LICENSE), который находится в корневом каталоге репозитория.
+* **Engine:** Godot Engine v4.1.1 (Mono / .NET)
+* **Language:** C#
 
 ---
 
-Спасибо, что заглянули!
+## 📜 License
+
+This project is distributed under the **Creative Commons Attribution-NonCommercial 4.0 International** license.
+
+This means you are free to:
+* View and study the code.
+* Use code snippets in your **non-commercial** projects provided you give appropriate credit.
+
+You **may not**:
+* Use this project or its derivatives for commercial purposes.
+
+For full information, please see the [LICENSE](LICENSE) file located in the root directory of the repository.
+
+---
+
+Thank you for stopping by!
